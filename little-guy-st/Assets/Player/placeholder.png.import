@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckleflkblymg"
-path="res://.godot/imported/Little guy base sprite sheet (2).png-6e70b0fe6ff328cd134975c9763d2055.ctex"
+uid="uid://bdmekj62vuxhg"
+path="res://.godot/imported/placeholder.png-18c23d98285a656b87366742118f32d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Little guy base sprite sheet (2).png"
-dest_files=["res://.godot/imported/Little guy base sprite sheet (2).png-6e70b0fe6ff328cd134975c9763d2055.ctex"]
+source_file="res://Assets/Player/placeholder.png"
+dest_files=["res://.godot/imported/placeholder.png-18c23d98285a656b87366742118f32d8.ctex"]
 
 [params]
 

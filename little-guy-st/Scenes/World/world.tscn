@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://gb0617e7tfv2"]
 
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="1_t1gg8"]
+[ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
 [node name="World" type="Node2D" unique_id=1436687875]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=259608694]
+offset_left = -958.0
+offset_top = -596.0
+offset_right = -918.0
+offset_bottom = -556.0
+scale = Vector2(47.778996, 26.772243)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1443762833]
 
@@ -14,6 +22,10 @@ shape = SubResource("WorldBoundaryShape2D_pp5cw")
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
 position = Vector2(-15, -19)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1332216323]
-position = Vector2(0, -58)
-zoom = Vector2(0.6, 0.6)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
+position = Vector2(15, -39)
+zoom = Vector2(1.3, 1.3)
+
+[node name="Placeholder" type="Sprite2D" parent="." unique_id=171453269]
+position = Vector2(-273, -39)
+texture = ExtResource("2_yp2ti")
