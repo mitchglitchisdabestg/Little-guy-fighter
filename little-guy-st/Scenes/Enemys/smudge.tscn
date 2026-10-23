@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://qdp040wxkin2"]
+
+[ext_resource type="Texture2D" uid="uid://b3he2i0gxty71" path="res://Assets/Enemys/smudgeplaceholder.png" id="1_85o6k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l42l4"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(0, 0, 47, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l42l4")
+}],
+"loop": 1,
+"name": &"Placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gb75"]
+radius = 18.0
+height = 36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp5cw"]
+size = Vector2(27, 9)
+
+[node name="Sludge" type="Node2D" unique_id=421876324]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172457874]
+position = Vector2(24, 23)
+sprite_frames = SubResource("SpriteFrames_pp5cw")
+animation = &"Placeholder"
+autoplay = "Placeholder"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1476181021]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=834179141]
+position = Vector2(24, 26)
+shape = SubResource("CapsuleShape2D_7gb75")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1152609822]
+position = Vector2(24.5, 42.5)
+shape = SubResource("RectangleShape2D_pp5cw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=398697456]
+position = Vector2(23, 6)
+shape = SubResource("RectangleShape2D_pp5cw")

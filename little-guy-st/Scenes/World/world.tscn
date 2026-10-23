@@ -3,8 +3,47 @@
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="1_t1gg8"]
 [ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="2_3rhlx"]
 [ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
+[ext_resource type="PackedScene" uid="uid://qdp040wxkin2" path="res://Scenes/Enemys/smudge.tscn" id="4_vadfg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
+
+[sub_resource type="Animation" id="Animation_l1hd3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(175, -47)]
+}
+
+[sub_resource type="Animation" id="Animation_vadfg"]
+resource_name = "Walk test"
+length = 4.233333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 4),
+"transitions": PackedFloat32Array(0.6155722, 1.0717732, 1.7411005),
+"update": 0,
+"values": [Vector2(175, -47), Vector2(-9, -47), Vector2(175, -47)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1hd3"]
+_data = {
+&"RESET": SubResource("Animation_l1hd3"),
+&"Walk test": SubResource("Animation_vadfg")
+}
 
 [node name="World" type="Node2D" unique_id=1436687875]
 
@@ -15,17 +54,29 @@ offset_right = -918.0
 offset_bottom = -556.0
 scale = Vector2(47.778996, 26.772243)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1443762833]
+[node name="Floor boundray" type="StaticBody2D" parent="." unique_id=1443762833]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1412799898]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor boundray" unique_id=1412799898]
 shape = SubResource("WorldBoundaryShape2D_pp5cw")
 
-[node name="Placeholder" type="Sprite2D" parent="." unique_id=171453269]
+[node name="Stuff" type="Node2D" parent="." unique_id=773335714]
+
+[node name="Placeholder" type="Sprite2D" parent="Stuff" unique_id=171453269]
 position = Vector2(-273, -39)
 texture = ExtResource("2_yp2ti")
 
+[node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
+
+[node name="Sludge" parent="Stuff/Enemys" unique_id=421876324 instance=ExtResource("4_vadfg")]
+position = Vector2(175, -47)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Enemys/Sludge" unique_id=818880452]
+libraries/ = SubResource("AnimationLibrary_l1hd3")
+autoplay = &"Walk test"
+
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
 position = Vector2(-15, -19)
+collision_mask = 3
 
 [node name="Pause Menu" parent="Player" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
 offset_left = 7.0

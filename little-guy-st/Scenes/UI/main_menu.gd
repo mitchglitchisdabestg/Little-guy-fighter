@@ -14,7 +14,7 @@ func _ready() -> void:
 	start_position = background.position
 	
 func _on_new_game_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/World/World.tscn")
+	get_tree().change_scene_to_file("res://Scenes/World/world.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
