@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cjqfyvstfgfpo"]
 
-[ext_resource type="Texture2D" uid="uid://c0whll6j0hcfj" path="res://icon.svg" id="1_5wsvm"]
 [ext_resource type="Script" uid="uid://pbco0jsf84w1" path="res://Scenes/UI/main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://dn7iw2achlmrk" path="res://Assets/little_guy_pack/maps/worldA_sky.png" id="2_o14dv"]
+[ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="3_u7lva"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
 
@@ -23,6 +24,22 @@ script = ExtResource("1_fu7sn")
 [node name="PeakMenuMusic" type="AudioStreamPlayer" parent="." unique_id=768283682]
 autoplay = true
 
+[node name="Background2" type="TextureRect" parent="." unique_id=2020479587]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -737.0
+offset_top = -396.0
+offset_right = 935.0
+offset_bottom = 583.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o14dv")
+stretch_mode = 6
+
 [node name="Background" type="TextureRect" parent="." unique_id=420134897]
 layout_mode = 1
 anchors_preset = 8
@@ -30,13 +47,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -881.0
-offset_top = -474.0
-offset_right = 791.0
-offset_bottom = 505.0
+offset_left = -577.0
+offset_top = -118.0
+offset_right = 1095.0
+offset_bottom = 861.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5wsvm")
+texture = ExtResource("3_u7lva")
 stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=4046111]
