@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kt33apddjbb0"]
 
 [ext_resource type="Script" uid="uid://d8dy8y246ms2" path="res://Scripts/Player.gd" id="1_uvnfx"]
-[ext_resource type="Texture2D" uid="uid://qtfabg6kpbub" path="res://Assets/Player/littleguy-removebg-preview (1).png" id="2_a3d8c"]
+[ext_resource type="SpriteFrames" uid="uid://0wdc6ewwlvfu" path="res://Assets/Player/Little guy base sprite sheet-copy-0.png" id="2_a3d8c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
 radius = 8.0
@@ -14,7 +14,5 @@ script = ExtResource("1_uvnfx")
 position = Vector2(-1, -12)
 shape = SubResource("CapsuleShape2D_pp5cw")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=91425596]
-position = Vector2(15.999996, 5.999999)
-scale = Vector2(0.31072348, 0.3107235)
-texture = ExtResource("2_a3d8c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928361527]
+sprite_frames = ExtResource("2_a3d8c")
