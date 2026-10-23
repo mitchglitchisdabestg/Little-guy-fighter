@@ -1,18 +1,35 @@
 [gd_scene format=3 uid="uid://kt33apddjbb0"]
 
 [ext_resource type="Script" uid="uid://d8dy8y246ms2" path="res://Scripts/Player.gd" id="1_uvnfx"]
-[ext_resource type="SpriteFrames" uid="uid://0wdc6ewwlvfu" path="res://Assets/Player/Little guy base sprite sheet-copy-0.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://qtfabg6kpbub" path="res://Assets/Player/littleguy-removebg-preview (1).png" id="2_a3d8c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3d8c"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(178, 0, 176, 387)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3d8c")
+}],
+"loop": 1,
+"name": &"Placeholder",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
-radius = 8.0
-height = 48.0
+radius = 21.0
+height = 150.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226]
 script = ExtResource("1_uvnfx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
-position = Vector2(-1, -12)
-shape = SubResource("CapsuleShape2D_pp5cw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1463377531]
+sprite_frames = SubResource("SpriteFrames_pp5cw")
+animation = &"Placeholder"
+autoplay = "Placeholder"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928361527]
-sprite_frames = ExtResource("2_a3d8c")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
+position = Vector2(1, -56)
+shape = SubResource("CapsuleShape2D_pp5cw")

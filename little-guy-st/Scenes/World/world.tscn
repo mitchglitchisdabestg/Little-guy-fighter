@@ -15,5 +15,5 @@ shape = SubResource("WorldBoundaryShape2D_pp5cw")
 position = Vector2(-15, -19)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1332216323]
-position = Vector2(-1, -58)
-zoom = Vector2(2, 2)
+position = Vector2(0, -58)
+zoom = Vector2(0.6, 0.6)
