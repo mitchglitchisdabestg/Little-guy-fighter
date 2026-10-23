@@ -1,53 +1,25 @@
 [gd_scene format=3 uid="uid://kt33apddjbb0"]
 
 [ext_resource type="Script" uid="uid://d8dy8y246ms2" path="res://Scripts/Player.gd" id="1_uvnfx"]
-[ext_resource type="Texture2D" uid="uid://ckleflkblymg" path="res://Assets/Player/Little guy base sprite sheet (2).png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://c3l82t7mf723n" path="res://Assets/Player/spritesheet.png" id="2_a3d8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpcdj"]
 atlas = ExtResource("2_a3d8c")
-region = Rect2(0, 345, 402, 345)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
-atlas = ExtResource("2_a3d8c")
-region = Rect2(402, 345, 402, 345)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htcer"]
-atlas = ExtResource("2_a3d8c")
-region = Rect2(804, 345, 402, 345)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dd0ac"]
-atlas = ExtResource("2_a3d8c")
-region = Rect2(1206, 345, 402, 345)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0u5uq"]
-atlas = ExtResource("2_a3d8c")
-region = Rect2(1608, 345, 402, 345)
+region = Rect2(742, 248, 742, 248)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlvik"]
 atlas = ExtResource("2_a3d8c")
-region = Rect2(2010, 345, 402, 345)
+region = Rect2(1484, 0, 742, 248)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gk6dx"]
 atlas = ExtResource("2_a3d8c")
-region = Rect2(2412, 345, 402, 345)
+region = Rect2(2226, 0, 742, 248)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xpcdj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mtuoh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htcer")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dd0ac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0u5uq")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jlvik")
@@ -66,18 +38,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
-radius = 21.0
-height = 150.0
+radius = 37.0
+height = 206.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226]
 script = ExtResource("1_uvnfx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1463377531]
+position = Vector2(303, -114)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.0036720552
+frame_progress = 0.9335818
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
-position = Vector2(1, -56)
+position = Vector2(0, -104)
 shape = SubResource("CapsuleShape2D_pp5cw")
