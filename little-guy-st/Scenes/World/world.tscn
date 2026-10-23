@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.9666667, 4),
 "transitions": PackedFloat32Array(0.6155722, 1.0717732, 1.7411005),
 "update": 0,
-"values": [Vector2(175, -47), Vector2(-9, -47), Vector2(175, -47)]
+"values": [Vector2(175, -180), Vector2(-9, -180), Vector2(175, -180)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l1hd3"]
@@ -48,10 +48,10 @@ _data = {
 [node name="World" type="Node2D" unique_id=1436687875]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=259608694]
-offset_left = -958.0
-offset_top = -596.0
-offset_right = -918.0
-offset_bottom = -556.0
+offset_left = -997.0
+offset_top = -595.0
+offset_right = -957.0
+offset_bottom = -555.0
 scale = Vector2(47.778996, 26.772243)
 
 [node name="Floor boundray" type="StaticBody2D" parent="." unique_id=1443762833]
@@ -75,7 +75,7 @@ libraries/ = SubResource("AnimationLibrary_l1hd3")
 autoplay = &"Walk test"
 
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
-position = Vector2(-15, -19)
+position = Vector2(-3, -30)
 collision_mask = 3
 
 [node name="Pause Menu" parent="Player" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
