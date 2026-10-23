@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cjqfyvstfgfpo"]
+
+[ext_resource type="Texture2D" uid="uid://c0whll6j0hcfj" path="res://icon.svg" id="1_5wsvm"]
+[ext_resource type="Script" uid="uid://pbco0jsf84w1" path="res://Scenes/UI/main_menu.gd" id="1_fu7sn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+
+[node name="MainMenu" type="Control" unique_id=520495004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="PeakMenuMusic" type="AudioStreamPlayer" parent="." unique_id=768283682]
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=420134897]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -881.0
+offset_top = -474.0
+offset_right = 791.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5wsvm")
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=4046111]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -99.0
+offset_right = 172.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1990260065]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1136207556]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Little Guy Fighter"
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=515091646]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
+text = "New Game"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1589104044]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = 500
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1296841661]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/line_spacing = 500
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
+text = "Quit"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_exited"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]

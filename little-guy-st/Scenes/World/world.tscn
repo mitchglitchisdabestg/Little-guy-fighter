@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://gb0617e7tfv2"]
+[gd_scene format=3 uid="uid://c2vwb222ouqdu"]
 
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="1_t1gg8"]
+[ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="2_3rhlx"]
 [ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
@@ -25,6 +26,12 @@ position = Vector2(-15, -19)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
 position = Vector2(15, -39)
 zoom = Vector2(1.3, 1.3)
+
+[node name="Pause Menu" parent="Player" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
+offset_left = 7.0
+offset_top = -31.0
+offset_right = 7.0
+offset_bottom = -31.0
 
 [node name="Placeholder" type="Sprite2D" parent="." unique_id=171453269]
 position = Vector2(-273, -39)
