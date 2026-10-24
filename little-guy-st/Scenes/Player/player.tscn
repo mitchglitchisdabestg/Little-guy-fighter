@@ -3,6 +3,18 @@
 [ext_resource type="Script" uid="uid://d8dy8y246ms2" path="res://Scripts/Player.gd" id="1_uvnfx"]
 [ext_resource type="Texture2D" uid="uid://drr85vau1djql" path="res://Assets/little_guy_pack/player.png" id="2_a3d8c"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcvs5"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(0, 1248, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8ma5"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(64, 1248, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eksi1"]
+atlas = ExtResource("2_a3d8c")
+region = Rect2(128, 1248, 64, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5xpd"]
 atlas = ExtResource("2_a3d8c")
 region = Rect2(0, 288, 64, 96)
@@ -77,6 +89,20 @@ region = Rect2(192, 96, 64, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcvs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8ma5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eksi1")
+}],
+"loop": 1,
+"name": &"Dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r5xpd")
@@ -155,6 +181,11 @@ animations = [{
 "loop": 1,
 "name": &"Walk",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
@@ -170,10 +201,9 @@ script = ExtResource("1_uvnfx")
 position = Vector2(2, -10)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Fall"
+animation = &"Dash"
 autoplay = "Idle"
-frame = 1
-frame_progress = 0.719027
+frame_progress = 0.779455
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
 position = Vector2(2, -2)

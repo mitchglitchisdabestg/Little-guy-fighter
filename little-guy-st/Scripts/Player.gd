@@ -8,6 +8,14 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 var is_acting: bool = false
 
+const DASH_SPEED = 400.0
+const DASH_DURATION = 0.2
+var is_dashing: bool = false
+var dash_timer: float = 0.0
+var dash_direction: float = 0.0
+
+
+
 const DEPTH_SPEED = 120.0
 var depth_position: float
 var jump_height: float = 0.0
@@ -47,11 +55,16 @@ func _physics_process(delta: float) -> void:
 	elif direction.x < 0:
 		animated_sprite.flip_h = true
 		
-		
-	if direction.x != 0:
-		velocity.x = direction.x * SPEED
+	if is_dashing:
+		dash_timer -= delta
+		velocity.x = dash_direction * DASH_SPEED
+		if dash_timer <= 0.0:
+			is_dashing = false
 	else:
-		velocity.x = move_toward(velocity.x,0, SPEED)
+		if direction.x != 0:
+			velocity.x = direction.x * SPEED
+		else:
+			velocity.x = move_toward(velocity.x,0, SPEED)
 		
 	
 	velocity.y = direction.y * DEPTH_SPEED
@@ -59,10 +72,22 @@ func _physics_process(delta: float) -> void:
 	
 	#position.y = clamp(position.y,Level_Top,Level_Bottom)
 	depth_position = position.y
+	
+	if Input.is_action_just_pressed("Dash") and not is_acting:
+		if direction.x != 0:
+			dash_direction = sign(direction.x)
+		else: dash_direction = -1 if animated_sprite.flip_h else 1
+		
+		is_dashing = true
+		dash_timer = DASH_DURATION
+		animated_sprite.play("Dash")
 
 
 #Play animations
-	if is_acting:
+	if is_dashing: 
+		if animated_sprite.animation != "Dash":
+			animated_sprite.play("Dash")
+	elif is_acting:
 		if jump_velocity < 0:
 			if animated_sprite.animation != "Jump":
 				animated_sprite.play("Jump")
@@ -76,7 +101,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			if animated_sprite.animation != "Walk":
 				animated_sprite.play("Walk")
-		
 
 		
 func _ready() -> void:
