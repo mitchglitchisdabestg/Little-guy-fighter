@@ -5,9 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="1_t1gg8"]
 [ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="2_3rhlx"]
 [ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
+[ext_resource type="PackedScene" uid="uid://dpeo1ush00epl" path="res://Scenes/Stuff/portal.tscn" id="3_7staa"]
 [ext_resource type="PackedScene" uid="uid://qdp040wxkin2" path="res://Scenes/Enemys/smudge.tscn" id="4_vadfg"]
+[ext_resource type="PackedScene" uid="uid://bk7hlfbklvckm" path="res://Scenes/NPCS/Green NPC.tscn" id="8_fcotr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcotr"]
+size = Vector2(4464, 121)
 
 [sub_resource type="Animation" id="Animation_l1hd3"]
 length = 0.001
@@ -49,13 +54,23 @@ _data = {
 
 [node name="Tutorial" type="Node2D" unique_id=1436687875]
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1879447480]
-offset_left = -409.00003
-offset_top = -639.00006
-offset_right = 4071.0
-offset_bottom = -279.00006
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1973355136]
+offset_left = 2174.0002
+offset_top = -496.0
+offset_right = 4785.3457
+offset_bottom = -299.7202
 scale = Vector2(0.99884075, 3.6525729)
 texture = ExtResource("1_adcqc")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1879447480]
+offset_left = -425.0
+offset_top = -505.0
+offset_right = 2186.3457
+offset_bottom = -308.7202
+scale = Vector2(0.99884075, 3.6525729)
+texture = ExtResource("1_adcqc")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1735593947]
 offset_left = -425.0
@@ -64,16 +79,26 @@ offset_right = 4055.0
 offset_bottom = -1.0
 texture = ExtResource("1_l1hd3")
 
-[node name="Floor boundray" type="StaticBody2D" parent="." unique_id=1443762833]
+[node name="Level boundrays" type="StaticBody2D" parent="." unique_id=1443762833]
 position = Vector2(0, -4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor boundray" unique_id=1412799898]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level boundrays" unique_id=1412799898]
 shape = SubResource("WorldBoundaryShape2D_pp5cw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level boundrays" unique_id=1239753375]
+position = Vector2(1808, -258)
+shape = SubResource("RectangleShape2D_fcotr")
 
 [node name="Stuff" type="Node2D" parent="." unique_id=773335714]
 
+[node name="Green NPC" parent="Stuff" unique_id=431122496 instance=ExtResource("8_fcotr")]
+position = Vector2(-128, -172)
+
+[node name="Portal" parent="Stuff" unique_id=726327491 instance=ExtResource("3_7staa")]
+position = Vector2(4001, -95)
+
 [node name="Placeholder" type="Sprite2D" parent="Stuff" unique_id=171453269]
-position = Vector2(-273, -39)
+position = Vector2(-275, 122)
 texture = ExtResource("2_yp2ti")
 
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
@@ -83,18 +108,19 @@ position = Vector2(175, -47)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Enemys/Sludge" unique_id=818880452]
 libraries/ = SubResource("AnimationLibrary_l1hd3")
-autoplay = &"Walk test"
 
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
-position = Vector2(-3, -30)
+position = Vector2(-276, -171)
 collision_mask = 3
 
 [node name="Pause Menu" parent="Player" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
-offset_left = 7.0
-offset_top = -31.0
-offset_right = 7.0
-offset_bottom = -31.0
+offset_left = 16.0
+offset_top = -72.0
+offset_right = 16.0
+offset_bottom = -72.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
-position = Vector2(15, -39)
-zoom = Vector2(1.3, 1.3)
+position = Vector2(20, -86)
+zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_speed = 10.0

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dpeo1ush00epl"]
+
+[ext_resource type="Texture2D" uid="uid://bqq3f81385drn" path="res://Assets/little_guy_pack/portal.png" id="1_lx1xc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvrnr"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(0, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0q5c"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(160, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cmwx"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(320, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3yiw"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(480, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl1gi"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(640, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p36bq"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(800, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va6if"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(960, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylbr1"]
+atlas = ExtResource("1_lx1xc")
+region = Rect2(1120, 0, 160, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvrnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0q5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cmwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3yiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl1gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p36bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va6if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylbr1")
+}],
+"loop": 1,
+"name": &"Swirl",
+"speed": 8.0
+}]
+
+[node name="Portal" type="Node2D" unique_id=726327491]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694053307]
+sprite_frames = SubResource("SpriteFrames_pp5cw")
+animation = &"Swirl"
+autoplay = "Swirl"
+frame_progress = 0.68559855

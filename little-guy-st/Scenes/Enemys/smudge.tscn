@@ -18,17 +18,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gb75"]
-radius = 78.666664
-height = 162.66667
+radius = 99.061035
+height = 198.12207
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp5cw"]
-size = Vector2(42.833336, 21.833328)
+size = Vector2(42.833336, 30.888893)
 
 [node name="Sludge" type="Node2D" unique_id=421876324]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172457874]
 position = Vector2(90.359985, 91.23998)
-scale = Vector2(3.7599993, 3.7599993)
+scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Placeholder"
 autoplay = "Placeholder"
@@ -39,16 +39,16 @@ scale = Vector2(0.564, 0.564)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=834179141]
-position = Vector2(20.638325, -2.198574)
-scale = Vector2(1.5, 1.5)
+position = Vector2(18.865274, -25.24822)
+scale = Vector2(0.76963806, 0.7989819)
 shape = SubResource("CapsuleShape2D_7gb75")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1152609822]
-position = Vector2(-37.872314, 102.41132)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-18.368773, 52.76596)
+scale = Vector2(0.769638, 0.7989819)
 shape = SubResource("RectangleShape2D_pp5cw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=398697456]
-position = Vector2(82.69507, 104.1844)
-scale = Vector2(1.5, 1.5)
+position = Vector2(59.645424, 54.539043)
+scale = Vector2(0.76963806, 0.7989821)
 shape = SubResource("RectangleShape2D_pp5cw")

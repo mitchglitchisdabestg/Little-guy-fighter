@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://can5meyiwaj2y"]
+
+[ext_resource type="Texture2D" uid="uid://co71sh08iroe7" path="res://Assets/little_guy_pack/pickups.png" id="1_0j7dr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kquaf"]
+atlas = ExtResource("1_0j7dr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yld6"]
+atlas = ExtResource("1_0j7dr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8vht"]
+atlas = ExtResource("1_0j7dr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljruv"]
+atlas = ExtResource("1_0j7dr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kquaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yld6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8vht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljruv")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=148721377]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1946423618]
+sprite_frames = SubResource("SpriteFrames_pp5cw")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.41531983

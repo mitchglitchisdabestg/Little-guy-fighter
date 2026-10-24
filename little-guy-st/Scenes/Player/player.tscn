@@ -158,13 +158,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
-height = 74.0
+radius = 8.0
+height = 56.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226]
 script = ExtResource("1_uvnfx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1463377531]
-position = Vector2(2, -41)
+[node name="Visuals" type="Node2D" parent="." unique_id=1461922275]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1463377531]
+position = Vector2(2, -10)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Fall"
 autoplay = "Idle"
@@ -172,5 +176,5 @@ frame = 1
 frame_progress = 0.719027
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
-position = Vector2(0, -34)
+position = Vector2(2, -2)
 shape = SubResource("CapsuleShape2D_pp5cw")
