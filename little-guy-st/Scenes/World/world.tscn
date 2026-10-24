@@ -50,10 +50,10 @@ _data = {
 [node name="Tutorial" type="Node2D" unique_id=1436687875]
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1879447480]
-offset_left = -411.0
-offset_top = -603.0
-offset_right = 4069.0
-offset_bottom = -243.0
+offset_left = -409.00003
+offset_top = -639.00006
+offset_right = 4071.0
+offset_bottom = -279.00006
 scale = Vector2(0.99884075, 3.6525729)
 texture = ExtResource("1_adcqc")
 
@@ -65,6 +65,7 @@ offset_bottom = -1.0
 texture = ExtResource("1_l1hd3")
 
 [node name="Floor boundray" type="StaticBody2D" parent="." unique_id=1443762833]
+position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor boundray" unique_id=1412799898]
 shape = SubResource("WorldBoundaryShape2D_pp5cw")

@@ -158,7 +158,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
-height = 66.0
+height = 74.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226]
 script = ExtResource("1_uvnfx")
