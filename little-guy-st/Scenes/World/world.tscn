@@ -111,7 +111,7 @@ position = Vector2(-447, -154.5)
 shape = SubResource("RectangleShape2D_y0d6x")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Level boundrays" unique_id=810764516]
-position = Vector2(4476, -166)
+position = Vector2(4097, -160)
 shape = SubResource("RectangleShape2D_y0d6x")
 
 [node name="Stuff" type="Node2D" parent="." unique_id=773335714]
