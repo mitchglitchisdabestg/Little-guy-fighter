@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c2vwb222ouqdu"]
 
+[ext_resource type="Texture2D" uid="uid://dn7iw2achlmrk" path="res://Assets/little_guy_pack/maps/worldA_sky.png" id="1_adcqc"]
+[ext_resource type="Texture2D" uid="uid://6i3r21sl210" path="res://Assets/little_guy_pack/maps/worldA_main.png" id="1_l1hd3"]
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="1_t1gg8"]
 [ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="2_3rhlx"]
 [ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
@@ -45,14 +47,22 @@ _data = {
 &"Walk test": SubResource("Animation_vadfg")
 }
 
-[node name="World" type="Node2D" unique_id=1436687875]
+[node name="Tutorial" type="Node2D" unique_id=1436687875]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=259608694]
-offset_left = -997.0
-offset_top = -595.0
-offset_right = -957.0
-offset_bottom = -555.0
-scale = Vector2(47.778996, 26.772243)
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1879447480]
+offset_left = -411.0
+offset_top = -603.0
+offset_right = 4069.0
+offset_bottom = -243.0
+scale = Vector2(0.99884075, 3.6525729)
+texture = ExtResource("1_adcqc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1735593947]
+offset_left = -425.0
+offset_top = -361.0
+offset_right = 4055.0
+offset_bottom = -1.0
+texture = ExtResource("1_l1hd3")
 
 [node name="Floor boundray" type="StaticBody2D" parent="." unique_id=1443762833]
 
