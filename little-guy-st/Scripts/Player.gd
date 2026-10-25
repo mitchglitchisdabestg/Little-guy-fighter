@@ -23,6 +23,7 @@ var is_shooting: bool = false
 var is_charging: bool = false
 var is_charge_beam: bool = false
 const PROJECTILE_SCENE = preload("res://Scenes/Attack/Projectiles/projectile.tscn")
+const BEAM_SCENE = preload("res://Scenes/Attack/Projectiles/beam.tscn")
 
 
 #streets of rage movement (up and down the street)
@@ -36,7 +37,7 @@ const Level_Bottom = 600.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if Input.is_action_just_pressed("Jump") and not is_acting:
+	if Input.is_action_just_pressed("Jump") and not is_acting and not is_shooting and not is_charging and not is_charge_beam and not is_dashing:
 		jump_velocity = JUMP_VELOCITY
 		is_acting = true
 		animated_sprite.play("Jump")
@@ -71,6 +72,7 @@ func _physics_process(delta: float) -> void:
 		is_charging = false
 		is_charge_beam = true
 		animated_sprite.play("Ha")
+		beam_shoot()
 	
 	#checking direction, and then flippng the sprite horizontially accordingly
 	if direction.x > 0 :
@@ -147,8 +149,21 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func shoot_projectile() -> void:
 	var projectile = PROJECTILE_SCENE.instantiate()
 	projectile.direction = -1.0 if animated_sprite.flip_h else 1.0
-	projectile.global_position = global_position + Vector2(
-	-20 if animated_sprite.flip_h else 20,
-	-20
-	)
+	var spawn_offset =Vector2(
+		-5 if animated_sprite.flip_h else 5,
+		-5
+		)
+	projectile.global_position = global_position + spawn_offset
 	get_tree().current_scene.add_child(projectile)
+	
+func beam_shoot() -> void:
+	var beam = BEAM_SCENE.instantiate()
+	beam.direction = -1.0 if animated_sprite.flip_h else 1.0
+
+	
+	var spawn_offset =Vector2(
+		-2 if animated_sprite.flip_h else 2,
+		-2
+		)
+	beam.global_position = global_position + spawn_offset
+	get_tree().current_scene.add_child(beam)

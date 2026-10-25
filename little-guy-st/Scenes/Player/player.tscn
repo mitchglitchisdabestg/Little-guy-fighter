@@ -236,7 +236,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eksi1")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Dash",
 "speed": 5.0
 }, {
@@ -329,7 +329,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dey5f")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Jump",
 "speed": 5.0
 }, {
@@ -451,7 +451,7 @@ script = ExtResource("1_uvnfx")
 position = Vector2(2, -10)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Pew_Pew"
+animation = &"Dash"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2047518211]
