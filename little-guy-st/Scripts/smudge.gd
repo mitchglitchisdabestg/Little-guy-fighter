@@ -34,7 +34,13 @@ func _physics_process(delta: float) -> void:
 	print("Y difference",y_difference)
 	match current_state:
 		State.CHASE_Y:
-			if abs(y_difference) > Y_MIN_TOLERANCE and get_slide_collision_count() == 0:
+			var hit_boundary = false
+			if get_slide_collision_count() > 0:
+				var collider = get_slide_collision(0).get_collider()
+				if collider and "boundray" in collider.name.to_lower():
+					hit_boundary = true
+					
+			if abs(y_difference) > Y_MIN_TOLERANCE and not hit_boundary:
 			# Move vertically toward player
 				velocity.x = 0
 				velocity.y = sign(y_difference) * SPEED
