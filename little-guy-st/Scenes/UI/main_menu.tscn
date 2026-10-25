@@ -1,135 +1,151 @@
 [gd_scene format=3 uid="uid://cjqfyvstfgfpo"]
 
-[ext_resource type="Script" uid="uid://pbco0jsf84w1" path="res://Scenes/UI/main_menu.gd" id="1_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://dn7iw2achlmrk" path="res://Assets/little_guy_pack/maps/worldA_sky.png" id="2_o14dv"]
-[ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="3_u7lva"]
-[ext_resource type="PackedScene" uid="uid://bwve6j05u54pm" path="res://Scenes/Stuff/decals.tscn" id="4_u7lva"]
-[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="5_mrfpk"]
+[ext_resource type="Script" uid="uid://pbco0jsf84w1" path="res://Scenes/UI/main_menu.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://d5a5nc4rwfox" path="res://Assets/Fonts/augiepixel.ttf" id="2_font"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/menu_bg.png" id="3_bg"]
+[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="6_jump"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+[sub_resource type="StyleBoxFlat" id="button_normal"]
+content_margin_left = 30.0
+content_margin_top = 8.0
+content_margin_right = 30.0
+content_margin_bottom = 12.0
+bg_color = Color(0.988, 0.984, 0.988, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 8
+border_color = Color(0.318, 0.302, 0.29, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+[sub_resource type="StyleBoxFlat" id="button_hover"]
+content_margin_left = 30.0
+content_margin_top = 8.0
+content_margin_right = 30.0
+content_margin_bottom = 12.0
+bg_color = Color(0.859, 0.588, 0.573, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 8
+border_color = Color(0.176, 0.153, 0.188, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+[sub_resource type="StyleBoxFlat" id="button_pressed"]
+content_margin_left = 30.0
+content_margin_top = 11.0
+content_margin_right = 30.0
+content_margin_bottom = 9.0
+bg_color = Color(0.71, 0.569, 0.859, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.176, 0.153, 0.188, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+[sub_resource type="StyleBoxEmpty" id="button_focus"]
 
-[node name="MainMenu" type="Control" unique_id=520495004]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fu7sn")
+script = ExtResource("1_script")
 
-[node name="PeakMenuMusic" type="AudioStreamPlayer" parent="." unique_id=768283682]
+[node name="PeakMenuMusic" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
-[node name="Background2" type="TextureRect" parent="." unique_id=2020479587]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -737.0
-offset_top = -396.0
-offset_right = 935.0
-offset_bottom = 583.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o14dv")
+mouse_filter = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="decals" parent="." unique_id=792370489 instance=ExtResource("4_u7lva")]
-position = Vector2(160, 334)
-
-[node name="Background" type="TextureRect" parent="." unique_id=420134897]
+[node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -921.0
-offset_top = -153.0
-offset_right = 1271.0
-offset_bottom = 826.0
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_u7lva")
-stretch_mode = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=4046111]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -255.0
-offset_top = -99.0
-offset_right = 172.0
-offset_bottom = 178.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_bottom = 64
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1990260065]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_constants/separation = 30
+theme_override_constants/separation = 22
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1136207556]
+[node name="NewGameButton" type="Button" parent="Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Little Guy Fighter"
+theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("button_normal")
+theme_override_styles/hover = SubResource("button_hover")
+theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/focus = SubResource("button_focus")
+text = "new game"
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=515091646]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
-text = "New Game"
-
-[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1589104044]
+[node name="SettingsButton" type="Button" parent="Buttons"]
 visible = false
 layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/line_spacing = 500
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
-text = "Settings"
+theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("button_normal")
+theme_override_styles/hover = SubResource("button_hover")
+theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/focus = SubResource("button_focus")
+text = "settings"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1296841661]
+[node name="QuitButton" type="Button" parent="Buttons"]
 layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/line_spacing = 500
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0o4t1")
-text = "Quit"
+theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("button_normal")
+theme_override_styles/hover = SubResource("button_hover")
+theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/focus = SubResource("button_focus")
+text = "quit"
 
-[node name="sfx_jump_start" type="AudioStreamPlayer" parent="." unique_id=1091816181]
-stream = ExtResource("5_mrfpk")
+[node name="sfx_jump_start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jump")
 
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_exited"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_exited"]
-[connection signal="focus_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_exited"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Buttons/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/NewGameButton" to="." method="_on_new_game_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/SettingsButton" to="." method="_on_settings_button_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/QuitButton" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_pressed"]
