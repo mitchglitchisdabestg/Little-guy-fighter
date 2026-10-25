@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a3gol")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -101,9 +101,10 @@ shape = SubResource("RectangleShape2D_pp5cw")
 position = Vector2(90.359985, 91.23998)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Walk"
+animation = &"Death"
 autoplay = "Walk"
-frame_progress = 0.53763175
+frame = 2
+frame_progress = 1.0
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=15037279]
 

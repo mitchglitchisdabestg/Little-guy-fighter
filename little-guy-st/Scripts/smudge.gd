@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var player:Node2D
+@onready var animated_sprite = $AnimatedSprite2D
 
 enum State {
 	CHASE_Y,
@@ -24,6 +25,8 @@ func take_damage(amount: int) -> void:
 	print("Enemy took damage : health: ", health)
 	if health <= 0:
 		print("Enemy died")
+		animated_sprite.play("Death")
+		await animated_sprite.animation_finished
 		queue_free()
 
 
