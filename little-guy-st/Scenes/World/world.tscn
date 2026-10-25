@@ -220,7 +220,7 @@ visible = false
 shape = SubResource("RectangleShape2D_fxlwc")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Level boundrays" unique_id=1504709871]
-position = Vector2(1869.5, 43.25)
+position = Vector2(1869, 44)
 shape = SubResource("RectangleShape2D_h42hy")
 
 [node name="Stuff" type="Node2D" parent="." unique_id=773335714]
@@ -238,7 +238,11 @@ texture = ExtResource("2_yp2ti")
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
 
 [node name="Sludge" parent="Stuff/Enemys" unique_id=421876324 instance=ExtResource("4_vadfg")]
-position = Vector2(288, -207)
+position = Vector2(293, -155)
+
+[node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge" unique_id=63250817]
+visible = false
+position = Vector2(93, 99)
 
 [node name="Node2D" parent="Stuff/Enemys" unique_id=1117632239 instance=ExtResource("7_0ph6x")]
 position = Vector2(564, -53)
@@ -247,7 +251,7 @@ position = Vector2(564, -53)
 position = Vector2(667, -45)
 
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
-position = Vector2(-276, -100)
+position = Vector2(-238, -99)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
@@ -292,6 +296,8 @@ stream = ExtResource("29_fdshi")
 stream = ExtResource("30_1diqj")
 
 [node name="Front Props" type="Node2D" parent="." unique_id=1875651415]
+light_mask = 2
+visibility_layer = 2
 
 [node name="barrier1" type="Sprite2D" parent="Front Props" unique_id=1314302567]
 position = Vector2(1215, -21)

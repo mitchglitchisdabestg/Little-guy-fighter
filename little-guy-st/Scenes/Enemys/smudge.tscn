@@ -73,6 +73,7 @@ animations = [{
 }]
 
 [node name="Sludge" type="CharacterBody2D" unique_id=2119966013]
+position = Vector2(-44, -149)
 script = ExtResource("1_l42l4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834179141]
@@ -94,5 +95,6 @@ shape = SubResource("RectangleShape2D_pp5cw")
 position = Vector2(90.359985, 91.23998)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Death"
+animation = &"Walk"
 autoplay = "Walk"
+frame_progress = 0.61878204

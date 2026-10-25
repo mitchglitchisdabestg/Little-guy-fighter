@@ -14,7 +14,7 @@ const Y_TOLERANCE = 20.0
 const ATTACK_RANGE = 45.0
 const ATTACK_COOLDOWN = 1.0
 
-
+var cooldown_timer: float = 0.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 				current_state = State.CHASE_X
 	
 		State.CHASE_X:
-			if abs(y_difference) > Y_TOLERANCE:
+			if abs(y_difference) > (Y_TOLERANCE + 15):
 				current_state = State.CHASE_Y
 				velocity = Vector2.ZERO
 			elif abs(x_difference) > ATTACK_RANGE:
@@ -62,8 +62,14 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector2.ZERO
 				current_state = State.ATTACK
+				current_state = State.COOLDOWN
 			move_and_slide()
 		State.ATTACK:
-			pass
+			velocity = Vector2.ZERO
+			cooldown_timer = ATTACK_COOLDOWN
 		State.COOLDOWN:
-			pass
+			velocity = Vector2.ZERO
+			cooldown_timer -= delta
+			if cooldown_timer <= 0:
+				current_state = State.CHASE_Y
+	move_and_slide()
