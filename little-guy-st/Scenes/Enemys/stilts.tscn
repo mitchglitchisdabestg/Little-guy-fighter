@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://b3lmbwcoebg6n" path="res://Assets/little_guy_pack/stilts.png" id="1_5id4q"]
 [ext_resource type="Script" uid="uid://bn44p52302jx1" path="res://Scripts/stilts.gd" id="1_6wmin"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
+radius = 13.0
+height = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5id4q"]
+radius = 4.0
+height = 64.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wmin"]
 atlas = ExtResource("1_5id4q")
 region = Rect2(0, 384, 64, 128)
@@ -112,43 +120,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
-radius = 13.0
-height = 82.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5id4q"]
-radius = 4.0
-height = 64.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wmin"]
 radius = 16.0
 height = 128.0
 
-[node name="Stilts" type="CharacterBody2D" unique_id=195494332]
+[node name="Stilts" type="CharacterBody2D" unique_id=195494332 groups=["Enemys"]]
 script = ExtResource("1_6wmin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=624868748]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_pp5cw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=878369519]
+position = Vector2(-7, 32)
+shape = SubResource("CapsuleShape2D_5id4q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=473383005]
+position = Vector2(9, 32)
+shape = SubResource("CapsuleShape2D_5id4q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1537633713]
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Attack"
 autoplay = "Walk"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=475104064]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=624868748]
-position = Vector2(0, -20)
-shape = SubResource("CapsuleShape2D_pp5cw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=878369519]
-position = Vector2(-7, 32)
-shape = SubResource("CapsuleShape2D_5id4q")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=473383005]
-position = Vector2(9, 32)
-shape = SubResource("CapsuleShape2D_5id4q")
-
-[node name="DamageArea" type="Area2D" parent="." unique_id=122855171]
+[node name="DamageArea" type="Area2D" parent="." unique_id=122855171 groups=["Enemys"]]
 position = Vector2(-90, -119)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1038987193]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1038987193 groups=["Enemys"]]
 position = Vector2(90, 118)
 shape = SubResource("CapsuleShape2D_6wmin")

@@ -2,6 +2,7 @@ extends CharacterBody2D
 var player:Node2D
 @onready var animated_sprite = $AnimatedSprite2D
 
+
 enum State {
 	CHASE_Y,
 	CHASE_X,
@@ -38,7 +39,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if player == null:
+		player = get_tree().get_first_node_in_group("player")
 		return
+	if player:
+		#flip sprite
+		if player.global_position.x < global_position.x:
+			animated_sprite.flip_h = true  # Face left
+		else:
+			animated_sprite.flip_h = false # Face right
+			
 	var x_difference = player.global_position.x - global_position.x
 	var y_difference = player.global_position.y - global_position.y
 	print("State",current_state)
@@ -85,9 +94,9 @@ func _physics_process(delta: float) -> void:
 			
 		State.ATTACK:
 			velocity = Vector2.ZERO
-			
 			if player and player.has_method("take_damage"):
 				player.take_damage(10)
+				animated_sprite.play("Attack")
 			cooldown_timer = ATTACK_COOLDOWN
 			current_state = State.COOLDOWN
 		State.COOLDOWN:

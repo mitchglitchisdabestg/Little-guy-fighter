@@ -239,6 +239,9 @@ texture = ExtResource("2_yp2ti")
 
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
 
+[node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 groups=["Enemys"] instance=ExtResource("8_pvt60")]
+position = Vector2(465, -69)
+
 [node name="Sludge" parent="Stuff/Enemys" unique_id=421876324 groups=["Enemys"] instance=ExtResource("4_vadfg")]
 position = Vector2(293, -155)
 
@@ -253,9 +256,6 @@ volume_db = -15.0
 
 [node name="Node2D" parent="Stuff/Enemys" unique_id=1117632239 instance=ExtResource("7_0ph6x")]
 position = Vector2(564, -53)
-
-[node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 groups=["Enemys"] instance=ExtResource("8_pvt60")]
-position = Vector2(667, -45)
 
 [node name="Player" parent="." unique_id=862921158 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_t1gg8")]
 position = Vector2(-238, -99)
