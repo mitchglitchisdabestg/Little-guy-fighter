@@ -243,6 +243,7 @@ position = Vector2(293, -155)
 [node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge" unique_id=63250817]
 visible = false
 position = Vector2(93, 99)
+enabled = false
 
 [node name="Node2D" parent="Stuff/Enemys" unique_id=1117632239 instance=ExtResource("7_0ph6x")]
 position = Vector2(564, -53)
