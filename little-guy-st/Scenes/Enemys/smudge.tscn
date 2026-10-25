@@ -72,8 +72,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]
+radius = 41.0
+height = 96.0
+
 [node name="Sludge" type="CharacterBody2D" unique_id=2119966013]
-position = Vector2(-44, -149)
+position = Vector2(-38, -151)
 script = ExtResource("1_l42l4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834179141]
@@ -97,4 +101,12 @@ scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.61878204
+frame_progress = 0.24132256
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=15037279]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=749530886]
+position = Vector2(90, 102)
+shape = SubResource("CapsuleShape2D_pp5cw")
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

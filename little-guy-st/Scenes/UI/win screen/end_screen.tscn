@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cgau55tensg5x"]
+
+[ext_resource type="Script" uid="uid://d4hy4tv6ymdjx" path="res://Scripts/end_screen.gd" id="1_abjgy"]
+[ext_resource type="Texture2D" uid="uid://xagd2tt4h6a" path="res://Assets/little_guy_pack/maps/title_bg.png" id="1_my301"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iaq5"]
+texture = ExtResource("1_my301")
+
+[node name="End screen" type="Control" unique_id=1546192841]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abjgy")
+
+[node name="Panel" type="Panel" parent="." unique_id=947346768]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -4.0
+offset_right = 1165.0
+offset_bottom = 660.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3iaq5")
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=2088581884]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49400002
+anchor_right = 0.5
+anchor_bottom = 0.49400002
+offset_left = -281.5
+offset_top = -198.16
+offset_right = 286.5
+offset_bottom = 203.84
+
+[node name="Title" type="Label" parent="Panel/Panel" unique_id=2101142166]
+top_level = true
+layout_mode = 0
+offset_left = 395.0
+offset_top = 165.0
+offset_right = 780.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "                  YOU BEAT THE GAME!"
+
+[node name="Thanks" type="Label" parent="Panel/Panel" unique_id=188170358]
+top_level = true
+layout_mode = 0
+offset_left = 396.0
+offset_top = 238.0
+offset_right = 781.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="customers_served" type="Label" parent="Panel/Panel" unique_id=824313967]
+top_level = true
+layout_mode = 0
+offset_left = 400.0
+offset_top = 336.0
+offset_right = 785.0
+offset_bottom = 364.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Time spent:
+00000"
+horizontal_alignment = 1
+
+[node name="continue" type="Button" parent="Panel/Panel" unique_id=540896836]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32900003
+anchor_top = 0.818
+anchor_right = 0.68700004
+anchor_bottom = 0.943
+offset_left = 0.12799072
+offset_top = 0.16400146
+offset_right = -0.21603394
+offset_bottom = -0.085998535
+text = "Continue..."
+
+[node name="BacktoMenu" type="Button" parent="Panel/Panel" unique_id=629733002]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32900003
+anchor_top = 0.818
+anchor_right = 0.68700004
+anchor_bottom = 0.943
+offset_left = 0.12799072
+offset_top = -0.6920166
+offset_right = -0.21603394
+offset_bottom = -0.9420166
+text = "- Back to Main Menu -"
+
+[node name="Label4" type="Label" parent="Panel/Panel" unique_id=2103742408]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 395.0
+offset_top = 165.0
+offset_right = 780.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/Panel" unique_id=257290327]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 395.0
+offset_top = 214.0
+offset_right = 780.0
+offset_bottom = 397.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Developers:
+Matthew - Mittymatty
+Mitchell - Mitchglitch
+Ruslan - Rushurov
+
+Artist: Hannah"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Panel/Panel" unique_id=204656456]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 396.0
+offset_top = 422.0
+offset_right = 781.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Thanks for Playing Root cafe!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Panel/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Panel/BacktoMenu" to="." method="_on_backto_menu_pressed"]

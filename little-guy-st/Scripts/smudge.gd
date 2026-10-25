@@ -73,6 +73,8 @@ func _physics_process(delta: float) -> void:
 			
 		State.ATTACK:
 			velocity = Vector2.ZERO
+			if player and player.has_method("take_damage"):
+				player.take_damage(10)
 			cooldown_timer = ATTACK_COOLDOWN
 			current_state = State.COOLDOWN
 		State.COOLDOWN:
@@ -81,3 +83,9 @@ func _physics_process(delta: float) -> void:
 			if cooldown_timer <= 0:
 				current_state = State.CHASE_Y
 	move_and_slide()
+
+
+func _on_damage_area_body_entered(body: Node2D) -> void:
+	if body == player and body.has_method("take_damage"):
+		body.take_damage(10)
+		

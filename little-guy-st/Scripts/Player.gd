@@ -43,8 +43,30 @@ var depth_position: float
 const Level_Top = 300.0
 const Level_Bottom = 600.0
 
+#Health setup
+@export var health_bar: ProgressBar
+var health: = 100
+var current_health: = 100
+func take_damage(amount: int) -> void:
+	current_health -= amount
+	print("Player took damage : health: ", current_health)
+	if health_bar:
+		health_bar.value = current_health
+		
+	if current_health <=0:
+		print("Player died!")
+		animated_sprite.play("Death")
+		await get_tree().create_timer(3.0).timeout
+		var tree = get_tree()
+		if tree:
+			tree.reload_current_scene()
+
+
 
 func _physics_process(delta: float) -> void:
+	if current_health <= 0:
+		velocity = Vector2.ZERO
+		return
 	# Add the gravity.
 	if Input.is_action_just_pressed("Jump") and not is_acting and not is_shooting and not is_charging and not is_charge_beam and not is_dashing:
 		jump_velocity = JUMP_VELOCITY

@@ -251,9 +251,10 @@ position = Vector2(564, -53)
 [node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 instance=ExtResource("8_pvt60")]
 position = Vector2(667, -45)
 
-[node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
+[node name="Player" parent="." unique_id=862921158 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_t1gg8")]
 position = Vector2(-238, -99)
 collision_mask = 3
+health_bar = NodePath("../CanvasLayer/health_bar")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
 position = Vector2(20, -86)
@@ -327,3 +328,14 @@ scene_name = "portal"
 stream = SubResource("AudioStreamMP3_y0d6x")
 volume_db = -18.0
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1175757877]
+
+[node name="health_bar" type="ProgressBar" parent="CanvasLayer" unique_id=1824958973]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_right = 2.0
+offset_bottom = 27.0
+grow_horizontal = 2
