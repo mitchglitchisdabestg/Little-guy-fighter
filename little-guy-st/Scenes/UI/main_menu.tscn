@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pbco0jsf84w1" path="res://Scenes/UI/main_menu.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://d5a5nc4rwfox" path="res://Assets/Fonts/augiepixel.ttf" id="2_font"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/menu_bg.png" id="3_bg"]
+[ext_resource type="Texture2D" uid="uid://cwiqlhi4e7gq1" path="res://Assets/little_guy_pack/maps/menu_bg.png" id="3_bg"]
 
 [sub_resource type="StyleBoxFlat" id="button_normal"]
 content_margin_left = 30.0
@@ -15,22 +15,6 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 8
 border_color = Color(0.318, 0.302, 0.29, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="button_hover"]
-content_margin_left = 30.0
-content_margin_top = 8.0
-content_margin_right = 30.0
-content_margin_bottom = 12.0
-bg_color = Color(0.859, 0.588, 0.573, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 8
-border_color = Color(0.176, 0.153, 0.188, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -52,9 +36,25 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="button_hover"]
+content_margin_left = 30.0
+content_margin_top = 8.0
+content_margin_right = 30.0
+content_margin_bottom = 12.0
+bg_color = Color(0.859, 0.588, 0.573, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 8
+border_color = Color(0.176, 0.153, 0.188, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxEmpty" id="button_focus"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1591029360]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,10 +63,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="PeakMenuMusic" type="AudioStreamPlayer" parent="."]
+[node name="PeakMenuMusic" type="AudioStreamPlayer" parent="." unique_id=217824048]
 autoplay = true
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2038222821]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +78,7 @@ texture = ExtResource("3_bg")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Buttons" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=555158787]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,46 +94,46 @@ grow_vertical = 2
 theme_override_constants/separation = 22
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="Buttons"]
+[node name="NewGameButton" type="Button" parent="Buttons" unique_id=356385416]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
-theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
-theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 44
 theme_override_styles/normal = SubResource("button_normal")
-theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/focus = SubResource("button_focus")
 text = "new game"
 
-[node name="SettingsButton" type="Button" parent="Buttons"]
+[node name="SettingsButton" type="Button" parent="Buttons" unique_id=1416044574]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
-theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
-theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 44
 theme_override_styles/normal = SubResource("button_normal")
-theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/focus = SubResource("button_focus")
 text = "settings"
 
-[node name="QuitButton" type="Button" parent="Buttons"]
+[node name="QuitButton" type="Button" parent="Buttons" unique_id=446944262]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.318, 0.302, 0.29, 1)
-theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
-theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_colors/font_focus_color = Color(0.318, 0.302, 0.29, 1)
+theme_override_colors/font_pressed_color = Color(0.988, 0.984, 0.988, 1)
+theme_override_colors/font_hover_color = Color(0.988, 0.984, 0.988, 1)
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 44
 theme_override_styles/normal = SubResource("button_normal")
-theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/pressed = SubResource("button_pressed")
+theme_override_styles/hover = SubResource("button_hover")
 theme_override_styles/focus = SubResource("button_focus")
 text = "quit"
 

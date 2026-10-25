@@ -318,5 +318,5 @@ scene_name = "portal"
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")
-volume_db = -14.0
+volume_db = -18.0
 autoplay = true
