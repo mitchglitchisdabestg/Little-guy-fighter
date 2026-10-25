@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scripts/parallax.gd" id="px_script"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
@@ -26,6 +27,26 @@
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/lamp_post.png" id="prop_lamp_post"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/mailbox.png" id="prop_mailbox"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/trash_can.png" id="prop_trash_can"]
+=======
+[ext_resource type="AudioStream" uid="uid://cd31t4mq0wnlo" path="res://Assets/Sound/Sound Effects/Gun Shot.mp3" id="26_ch0oy"]
+[ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="27_km1ei"]
+[ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="28_fxlwc"]
+[ext_resource type="Texture2D" uid="uid://d23sh4winim23" path="res://Assets/little_guy_pack/maps/props/balloon_cart.png" id="prop_balloon_cart"]
+[ext_resource type="Texture2D" uid="uid://0gidr4wh6nfo" path="res://Assets/little_guy_pack/maps/props/barrier.png" id="prop_barrier"]
+[ext_resource type="Texture2D" uid="uid://dgxlrpqvu0vjw" path="res://Assets/little_guy_pack/maps/props/bench.png" id="prop_bench"]
+[ext_resource type="Texture2D" uid="uid://bfpqkr56gmshi" path="res://Assets/little_guy_pack/maps/props/cafe_sign.png" id="prop_cafe_sign"]
+[ext_resource type="Texture2D" uid="uid://dnfckdw1dokox" path="res://Assets/little_guy_pack/maps/props/crates.png" id="prop_crates"]
+[ext_resource type="Texture2D" uid="uid://bqdnjsjhegd3h" path="res://Assets/little_guy_pack/maps/props/flower_bed.png" id="prop_flower_bed"]
+[ext_resource type="Texture2D" uid="uid://ddpw8rrbt7jeb" path="res://Assets/little_guy_pack/maps/props/fruit_cart.png" id="prop_fruit_cart"]
+[ext_resource type="Texture2D" uid="uid://bkpkhhxueejd2" path="res://Assets/little_guy_pack/maps/props/hydrant.png" id="prop_hydrant"]
+[ext_resource type="Texture2D" uid="uid://bhngouchqhw48" path="res://Assets/little_guy_pack/maps/props/lamp_post.png" id="prop_lamp_post"]
+[ext_resource type="Texture2D" uid="uid://doesojh6xroi5" path="res://Assets/little_guy_pack/maps/props/mailbox.png" id="prop_mailbox"]
+[ext_resource type="Texture2D" uid="uid://csm7vsicbx2qb" path="res://Assets/little_guy_pack/maps/props/trash_can.png" id="prop_trash_can"]
+[ext_resource type="Texture2D" uid="uid://olnoxcufoqqd" path="res://Assets/little_guy_pack/maps/props/tree.png" id="prop_tree"]
+[ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
+[ext_resource type="Texture2D" uid="uid://c3mcnml3bx2dv" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
+[ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
+>>>>>>> 58cddf25236091a0e4daf6654c739e9e69190105
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
@@ -48,7 +69,6 @@ offset_right = 855.0
 offset_bottom = -1.0
 texture = ExtResource("1_adcqc")
 script = ExtResource("px_script")
-speed = 0.1
 
 [node name="Far" type="TextureRect" parent="." unique_id=423946139]
 offset_left = -425.0
@@ -227,12 +247,6 @@ position = Vector2(667, -45)
 position = Vector2(-276, -171)
 collision_mask = 3
 
-[node name="Pause Menu" parent="Player" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
-offset_left = 16.0
-offset_top = -72.0
-offset_right = 16.0
-offset_bottom = -72.0
-
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1332216323]
 position = Vector2(20, -86)
 zoom = Vector2(1.8, 1.8)
@@ -243,11 +257,27 @@ limit_bottom = -1
 limit_smoothed = true
 position_smoothing_speed = 10.0
 
+[node name="Pause Menu" parent="Player/Camera2D" unique_id=1368006392 instance=ExtResource("2_3rhlx")]
+offset_left = -4.0
+offset_top = 14.0
+offset_right = -4.0
+offset_bottom = 14.0
+
 [node name="Tutorial dialouge" parent="Player" unique_id=1400729136 instance=ExtResource("9_y0d6x")]
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1109135011]
 stream = ExtResource("12_pvt60")
 volume_db = -14.0
+
+[node name="gunshot_sfx" type="AudioStreamPlayer" parent="Player" unique_id=392115503]
+stream = ExtResource("26_ch0oy")
+
+[node name="dash_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1059645748]
+stream = ExtResource("27_km1ei")
+
+[node name="walking_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1743693487]
+stream = ExtResource("28_fxlwc")
+volume_db = -7.0
 
 [node name="Front Props" type="Node2D" parent="." unique_id=1875651415]
 

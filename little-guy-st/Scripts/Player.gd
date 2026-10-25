@@ -4,7 +4,10 @@ extends CharacterBody2D
 @onready var animated_sprite = $Visuals/AnimatedSprite2D
 var sprite_start_y: float
 
+@onready var walking_sfx: AudioStreamPlayer = $walking_sfx
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
+@onready var gunshot_sfx: AudioStreamPlayer = $gunshot_sfx
+@onready var dash_sfx: AudioStreamPlayer = $dash_sfx
 
 #regularspeed and jump
 const SPEED = 200.0
@@ -68,6 +71,7 @@ func _physics_process(delta: float) -> void:
 		is_shooting = true
 		animated_sprite.play("Pew_Pew")
 		shoot_projectile()
+		$gunshot_sfx.play()
 	if Input.is_action_just_pressed("Charged") and not is_shooting and not is_acting and not is_charging and not is_dashing:
 		is_charging = true
 		animated_sprite.play("Kamekame")
@@ -109,15 +113,18 @@ func _physics_process(delta: float) -> void:
 		is_dashing = true
 		dash_timer = DASH_DURATION
 		animated_sprite.play("Dash")
+		$dash_sfx.play()
 
 
 #Play animations
 	if is_shooting or is_charging or is_charge_beam:
-		pass
+		walking_sfx.stop()
 	elif is_dashing: 
+		walking_sfx.stop()
 		if animated_sprite.animation != "Dash":
 			animated_sprite.play("Dash")
 	elif is_acting:
+		walking_sfx.stop()
 		if jump_velocity < 0:
 			if animated_sprite.animation != "Jump":
 				animated_sprite.play("Jump")
@@ -127,11 +134,16 @@ func _physics_process(delta: float) -> void:
 		pass
 	else:
 		if direction == Vector2.ZERO:
+			walking_sfx.stop()
 			if animated_sprite.animation != "Idle":
 				animated_sprite.play("Idle")
 		else:
 			if animated_sprite.animation != "Walk":
 				animated_sprite.play("Walk")
+				$walking_sfx.play()
+			if not walking_sfx.playing:
+					walking_sfx.play()
+			
 		pass
 
 		
