@@ -96,6 +96,9 @@ animations = [{
 radius = 22.987766
 height = 168.02077
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp5cw"]
+size = Vector2(164, 60)
+
 [node name="Beam" type="Area2D" unique_id=848220936]
 script = ExtResource("1_t8yil")
 
@@ -122,3 +125,13 @@ frame_progress = 0.353397
 position = Vector2(56.999996, -2.9802294e-08)
 rotation = -1.5648794
 shape = SubResource("CapsuleShape2D_khvpl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2076861240 groups=["Enemys"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2048804836]
+position = Vector2(58, -2)
+shape = SubResource("RectangleShape2D_pp5cw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -124,7 +124,9 @@ animations = [{
 radius = 16.0
 height = 128.0
 
-[node name="Stilts" type="CharacterBody2D" unique_id=195494332 groups=["Enemys"]]
+[node name="Stilts" type="CharacterBody2D" unique_id=195494332]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_6wmin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=624868748]
@@ -144,9 +146,11 @@ sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Attack"
 autoplay = "Walk"
 
-[node name="DamageArea" type="Area2D" parent="." unique_id=122855171 groups=["Enemys"]]
+[node name="DamageArea" type="Area2D" parent="." unique_id=122855171]
 position = Vector2(-90, -119)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1038987193 groups=["Enemys"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1038987193]
 position = Vector2(90, 118)
 shape = SubResource("CapsuleShape2D_6wmin")
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

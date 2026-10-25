@@ -239,6 +239,9 @@ texture = ExtResource("2_yp2ti")
 
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
 
+[node name="Lurch" parent="Stuff/Enemys" unique_id=130595941 groups=["Enemys"] instance=ExtResource("7_0ph6x")]
+position = Vector2(671, -56)
+
 [node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 groups=["Enemys"] instance=ExtResource("8_pvt60")]
 position = Vector2(465, -69)
 
@@ -254,8 +257,65 @@ enabled = false
 stream = ExtResource("19_1diqj")
 volume_db = -15.0
 
-[node name="Node2D" parent="Stuff/Enemys" unique_id=1117632239 instance=ExtResource("7_0ph6x")]
-position = Vector2(564, -53)
+[node name="Sludge2" parent="Stuff/Enemys" unique_id=2119966013 groups=["Enemys"] instance=ExtResource("4_vadfg")]
+position = Vector2(1484, -156)
+
+[node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge2" unique_id=542719965]
+visible = false
+position = Vector2(93, 99)
+enabled = false
+
+[node name="ack_sfx" type="AudioStreamPlayer" parent="Stuff/Enemys/Sludge2" unique_id=1666443004]
+stream = ExtResource("19_1diqj")
+volume_db = -15.0
+
+[node name="Sludge3" parent="Stuff/Enemys" unique_id=1750519639 groups=["Enemys"] instance=ExtResource("4_vadfg")]
+position = Vector2(899, -163)
+
+[node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge3" unique_id=1513788472]
+visible = false
+position = Vector2(93, 99)
+enabled = false
+
+[node name="ack_sfx" type="AudioStreamPlayer" parent="Stuff/Enemys/Sludge3" unique_id=642727882]
+stream = ExtResource("19_1diqj")
+volume_db = -15.0
+
+[node name="Sludge4" parent="Stuff/Enemys" unique_id=2056124029 groups=["Enemys"] instance=ExtResource("4_vadfg")]
+position = Vector2(2584, -158)
+
+[node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge4" unique_id=862811705]
+visible = false
+position = Vector2(93, 99)
+enabled = false
+
+[node name="ack_sfx" type="AudioStreamPlayer" parent="Stuff/Enemys/Sludge4" unique_id=1683600168]
+stream = ExtResource("19_1diqj")
+volume_db = -15.0
+
+[node name="Sludge5" parent="Stuff/Enemys" unique_id=2002799226 groups=["Enemys"] instance=ExtResource("4_vadfg")]
+position = Vector2(3491, -161)
+
+[node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge5" unique_id=176966727]
+visible = false
+position = Vector2(93, 99)
+enabled = false
+
+[node name="ack_sfx" type="AudioStreamPlayer" parent="Stuff/Enemys/Sludge5" unique_id=762712581]
+stream = ExtResource("19_1diqj")
+volume_db = -15.0
+
+[node name="Stilts2" parent="Stuff/Enemys" unique_id=195494332 groups=["Enemys"] instance=ExtResource("8_pvt60")]
+position = Vector2(789, -77)
+
+[node name="Stilts3" parent="Stuff/Enemys" unique_id=1171415752 groups=["Enemys"] instance=ExtResource("8_pvt60")]
+position = Vector2(1401, -75)
+
+[node name="Stilts4" parent="Stuff/Enemys" unique_id=649172232 groups=["Enemys"] instance=ExtResource("8_pvt60")]
+position = Vector2(2080, -73)
+
+[node name="Stilts5" parent="Stuff/Enemys" unique_id=1136889555 groups=["Enemys"] instance=ExtResource("8_pvt60")]
+position = Vector2(3190, -92)
 
 [node name="Player" parent="." unique_id=862921158 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_t1gg8")]
 position = Vector2(-238, -99)

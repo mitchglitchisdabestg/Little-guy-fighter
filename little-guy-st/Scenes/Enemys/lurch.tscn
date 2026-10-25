@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://xo3jur4vg237"]
 
 [ext_resource type="Texture2D" uid="uid://i08trfeqrnlc" path="res://Assets/little_guy_pack/lurch.png" id="1_r2w8i"]
+[ext_resource type="Script" uid="uid://2a6axs2u5l7b" path="res://Scripts/lurch.gd" id="1_wdwow"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2w8i"]
+radius = 20.0
+height = 74.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdwow"]
 atlas = ExtResource("1_r2w8i")
@@ -97,19 +102,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2w8i"]
-radius = 20.0
-height = 74.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdwow"]
+radius = 19.0
+height = 70.0
 
-[node name="Node2D" type="Node2D" unique_id=1117632239]
+[node name="Lurch" type="CharacterBody2D" unique_id=130595941]
+script = ExtResource("1_wdwow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1231275832]
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_r2w8i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=949599652]
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Walk"
 autoplay = "Walk"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=24885567]
+[node name="DamageArea" type="Area2D" parent="." unique_id=1569984326]
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D" unique_id=1231275832]
-position = Vector2(-1, 4)
-shape = SubResource("CapsuleShape2D_r2w8i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1744310169]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_wdwow")
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

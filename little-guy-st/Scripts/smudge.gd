@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var player:Node2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 enum State {
 	CHASE_Y,
@@ -9,7 +10,7 @@ enum State {
 }
 var current_state: State = State.CHASE_Y
 
-const SPEED = 150.0
+const SPEED = 90.0
 const Y_MIN_TOLERANCE = 10.0
 const Y_MAX_TOLERANCE = 120.0
 const ATTACK_RANGE = 45.0
@@ -29,6 +30,8 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		print("Enemy died")
 		play_death_sound()
+		animated_sprite_2d.play("Death")
+		await animated_sprite_2d.animation_finished
 		queue_free()
 
 func play_death_sound() -> void:
