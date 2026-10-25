@@ -10,7 +10,6 @@ func pop(button, big):
 	create_tween().tween_property(button, "scale", Vector2(s, s), 0.1)
 
 func _on_new_game_button_pressed() -> void:
-	$sfx_jump_start.play()
 	get_tree().change_scene_to_file("res://Scenes/World/world.tscn")
 
 func _on_quit_pressed() -> void:

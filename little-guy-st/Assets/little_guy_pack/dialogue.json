@@ -207,6 +207,33 @@
     "happy",
     "I'm just a little guy... but that was a pretty big day."
    ]
+  ],
+  "rip_smudge": [
+   [
+    "smudge",
+    "grin",
+    "Blorp! Look what wandered into the Rip. A little guy, all on his own."
+   ],
+   [
+    "red",
+    "angry",
+    "Where's the thing that's eating all the colours?"
+   ],
+   [
+    "smudge",
+    "grin",
+    "Just down the street. Big. Wiggly. HUNGRY. Blorp blorp!"
+   ],
+   [
+    "smudge",
+    "angry",
+    "You'll be its snack before you even get there!"
+   ],
+   [
+    "red",
+    "determined",
+    "We'll see about that."
+   ]
   ]
  },
  "triggers": {
@@ -232,6 +259,10 @@
    {
     "scene": "rip",
     "x": 0
+   },
+   {
+    "scene": "rip_smudge",
+    "x": 650
    },
    {
     "scene": "boss",

@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
 [ext_resource type="Texture2D" uid="uid://c3mcnml3bx2dv" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
@@ -293,6 +294,16 @@ offset_right = 4055.0
 offset_bottom = -1.0
 mouse_filter = 2
 texture = ExtResource("px_fg")
+
+[node name="Park Dialogue" type="Node2D" parent="." unique_id=876364245]
+position = Vector2(2175, -100)
+script = ExtResource("talk_trigger")
+scene_name = "park"
+
+[node name="Market Dialogue" type="Node2D" parent="." unique_id=1107647799]
+position = Vector2(3455, -100)
+script = ExtResource("talk_trigger")
+scene_name = "portal"
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")

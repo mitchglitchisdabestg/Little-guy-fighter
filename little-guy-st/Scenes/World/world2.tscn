@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/dead_tree.png" id="prop_dead_tree"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
+[ext_resource type="Script" path="res://Scripts/sprite_anim.gd" id="anim"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
 
 [sub_resource type="WorldBoundaryShape2D" id="floor"]
 
@@ -45,6 +48,15 @@ offset_bottom = -1.0
 texture = ExtResource("far")
 script = ExtResource("px_script")
 speed = 0.4
+
+[node name="Boss Portal" type="Sprite2D" parent="." unique_id=1131824378]
+position = Vector2(2721, -165)
+texture = ExtResource("boss_portal")
+hframes = 8
+vframes = 3
+script = ExtResource("anim")
+fps = 10.0
+frame_count = 8
 
 [node name="Main" type="TextureRect" parent="." unique_id=1236299686]
 offset_left = 0.0
@@ -187,12 +199,6 @@ texture = ExtResource("prop_goo_puddle")
 centered = false
 offset = Vector2(-40, -18)
 
-[node name="dead_tree23" type="Sprite2D" parent="Props" unique_id=1889072314]
-position = Vector2(2740, -131)
-texture = ExtResource("prop_dead_tree")
-centered = false
-offset = Vector2(-40, -138)
-
 [node name="broken_lamp24" type="Sprite2D" parent="Props" unique_id=737028891]
 position = Vector2(3040, -125)
 texture = ExtResource("prop_broken_lamp")
@@ -262,6 +268,16 @@ offset_right = 3120.0
 offset_bottom = -1.0
 mouse_filter = 2
 texture = ExtResource("fg")
+
+[node name="Smudge Dialogue" type="Node2D" parent="." unique_id=489263331]
+position = Vector2(1300, -100)
+script = ExtResource("talk_trigger")
+scene_name = "rip_smudge"
+
+[node name="Boss Dialogue" type="Node2D" parent="." unique_id=711889898]
+position = Vector2(2360, -100)
+script = ExtResource("talk_trigger")
+scene_name = "boss"
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=260222960]
 stream = ExtResource("music")
