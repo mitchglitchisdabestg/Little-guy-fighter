@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://c8rip2world2x"]
 
 [ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="13_tty7c"]
+[ext_resource type="AudioStream" uid="uid://ddd6dltyft1jn" path="res://Assets/Sound/Music/Dark Theme.wav" id="20_ogoqw"]
+[ext_resource type="Script" uid="uid://ch1w21n7vt0vl" path="res://Scripts/sprite_anim.gd" id="anim"]
+[ext_resource type="Texture2D" uid="uid://b063horn6v8gp" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="dash"]
 [ext_resource type="PackedScene" uid="uid://b7ripdlg2lvl2" path="res://Scenes/UI/Dialouge/rip_dialouge.tscn" id="dialogue"]
 [ext_resource type="Texture2D" uid="uid://c6p680vxglkdi" path="res://Assets/little_guy_pack/maps/worldB_far.png" id="far"]
 [ext_resource type="Texture2D" uid="uid://c11d2oltlxfii" path="res://Assets/little_guy_pack/maps/worldB_fg.png" id="fg"]
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="jump"]
 [ext_resource type="Texture2D" uid="uid://cqjd4qktxbuds" path="res://Assets/little_guy_pack/maps/worldB_main.png" id="main"]
-[ext_resource type="AudioStream" uid="uid://cktma5oq57sss" path="res://Assets/Sound/Music/tuff (2).mp3" id="music"]
 [ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="pause"]
 [ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="player"]
 [ext_resource type="Texture2D" uid="uid://dcg3y3a2ln43j" path="res://Assets/little_guy_pack/maps/props/broken_lamp.png" id="prop_broken_lamp"]
@@ -16,10 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://jj43luy7nbri" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
 [ext_resource type="Texture2D" uid="uid://sgj0yh8yxl7f" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
+[ext_resource type="Script" uid="uid://dvrhjpwj0ploi" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
 [ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="walk"]
-[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
-[ext_resource type="Script" path="res://Scripts/sprite_anim.gd" id="anim"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
 
 [sub_resource type="WorldBoundaryShape2D" id="floor"]
 
@@ -52,8 +52,6 @@ texture = ExtResource("boss_portal")
 hframes = 8
 vframes = 3
 script = ExtResource("anim")
-fps = 10.0
-frame_count = 8
 
 [node name="Main" type="TextureRect" parent="." unique_id=1236299686]
 offset_top = -361.0
@@ -275,6 +273,6 @@ script = ExtResource("talk_trigger")
 scene_name = "boss"
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=260222960]
-stream = ExtResource("music")
+stream = ExtResource("20_ogoqw")
 volume_db = -14.0
 autoplay = true
