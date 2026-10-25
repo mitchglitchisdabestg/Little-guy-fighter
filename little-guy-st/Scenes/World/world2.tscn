@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://c8rip2world2x"]
 
-[ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="player"]
-[ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="pause"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Dialouge/rip_dialouge.tscn" id="dialogue"]
-[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="jump"]
-[ext_resource type="AudioStream" uid="uid://cd31t4mq0wnlo" path="res://Assets/Sound/Sound Effects/Gun Shot.mp3" id="gun"]
+[ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="13_tty7c"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="dash"]
-[ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="walk"]
-[ext_resource type="AudioStream" path="res://Assets/Sound/Music/tuff (2).mp3" id="music"]
+[ext_resource type="PackedScene" uid="uid://b7ripdlg2lvl2" path="res://Scenes/UI/Dialouge/rip_dialouge.tscn" id="dialogue"]
+[ext_resource type="Texture2D" uid="uid://c6p680vxglkdi" path="res://Assets/little_guy_pack/maps/worldB_far.png" id="far"]
+[ext_resource type="Texture2D" uid="uid://c11d2oltlxfii" path="res://Assets/little_guy_pack/maps/worldB_fg.png" id="fg"]
+[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="jump"]
+[ext_resource type="Texture2D" uid="uid://cqjd4qktxbuds" path="res://Assets/little_guy_pack/maps/worldB_main.png" id="main"]
+[ext_resource type="AudioStream" uid="uid://cktma5oq57sss" path="res://Assets/Sound/Music/tuff (2).mp3" id="music"]
+[ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="pause"]
+[ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="player"]
+[ext_resource type="Texture2D" uid="uid://dcg3y3a2ln43j" path="res://Assets/little_guy_pack/maps/props/broken_lamp.png" id="prop_broken_lamp"]
+[ext_resource type="Texture2D" uid="uid://do75rrrvgi6k3" path="res://Assets/little_guy_pack/maps/props/dead_tree.png" id="prop_dead_tree"]
+[ext_resource type="Texture2D" uid="uid://bybn3sxg51mm8" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
+[ext_resource type="Texture2D" uid="uid://jj43luy7nbri" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_far.png" id="far"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_main.png" id="main"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_fg.png" id="fg"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/broken_lamp.png" id="prop_broken_lamp"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/dead_tree.png" id="prop_dead_tree"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
+[ext_resource type="Texture2D" uid="uid://sgj0yh8yxl7f" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
+[ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="walk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="floor"]
 
@@ -29,16 +29,13 @@ size = Vector2(124, 323)
 [node name="Level 2" type="Node2D" unique_id=1119132783]
 
 [node name="Sky" type="TextureRect" parent="." unique_id=677662261]
-offset_left = 0.0
 offset_top = -361.0
 offset_right = 1280.0
 offset_bottom = -1.0
 texture = ExtResource("sky")
 script = ExtResource("px_script")
-speed = 0.1
 
 [node name="Far" type="TextureRect" parent="." unique_id=1511911446]
-offset_left = 0.0
 offset_top = -361.0
 offset_right = 1648.0
 offset_bottom = -1.0
@@ -47,7 +44,6 @@ script = ExtResource("px_script")
 speed = 0.4
 
 [node name="Main" type="TextureRect" parent="." unique_id=1236299686]
-offset_left = 0.0
 offset_top = -361.0
 offset_right = 3120.0
 offset_bottom = -1.0
@@ -246,7 +242,7 @@ stream = ExtResource("jump")
 volume_db = -14.0
 
 [node name="gunshot_sfx" type="AudioStreamPlayer" parent="Player" unique_id=226324276]
-stream = ExtResource("gun")
+stream = ExtResource("13_tty7c")
 
 [node name="dash_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1337411384]
 stream = ExtResource("dash")
@@ -256,7 +252,6 @@ stream = ExtResource("walk")
 volume_db = -7.0
 
 [node name="FG" type="TextureRect" parent="." unique_id=528709849]
-offset_left = 0.0
 offset_top = -361.0
 offset_right = 3120.0
 offset_bottom = -1.0
@@ -265,5 +260,5 @@ texture = ExtResource("fg")
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=260222960]
 stream = ExtResource("music")
-volume_db = -3.0
+volume_db = -14.0
 autoplay = true

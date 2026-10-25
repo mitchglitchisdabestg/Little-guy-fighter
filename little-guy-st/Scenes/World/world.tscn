@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
-[ext_resource type="AudioStream" uid="uid://cd31t4mq0wnlo" path="res://Assets/Sound/Sound Effects/Gun Shot.mp3" id="26_ch0oy"]
+[ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="25_km1ei"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="27_km1ei"]
 [ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="28_fxlwc"]
 [ext_resource type="Texture2D" uid="uid://d23sh4winim23" path="res://Assets/little_guy_pack/maps/props/balloon_cart.png" id="prop_balloon_cart"]
@@ -269,7 +269,7 @@ stream = ExtResource("12_pvt60")
 volume_db = -14.0
 
 [node name="gunshot_sfx" type="AudioStreamPlayer" parent="Player" unique_id=392115503]
-stream = ExtResource("26_ch0oy")
+stream = ExtResource("25_km1ei")
 
 [node name="dash_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1059645748]
 stream = ExtResource("27_km1ei")
