@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bwve6j05u54pm"]
+
+[ext_resource type="Texture2D" uid="uid://cq2bm3cw84qga" path="res://Assets/little_guy_pack/portrait_red.png" id="1_7w8lc"]
+[ext_resource type="Texture2D" uid="uid://bydq8oixsb7i6" path="res://Assets/little_guy_pack/portrait_smudge.png" id="2_em72y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em72y"]
+atlas = ExtResource("1_7w8lc")
+region = Rect2(0, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15dhu"]
+atlas = ExtResource("1_7w8lc")
+region = Rect2(0, 192, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28yc5"]
+atlas = ExtResource("1_7w8lc")
+region = Rect2(0, 384, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcps8"]
+atlas = ExtResource("1_7w8lc")
+region = Rect2(0, 576, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb4c5"]
+atlas = ExtResource("1_7w8lc")
+region = Rect2(0, 768, 160, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em72y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15dhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28yc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcps8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb4c5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jphmj"]
+atlas = ExtResource("2_em72y")
+region = Rect2(0, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdj50"]
+atlas = ExtResource("2_em72y")
+region = Rect2(0, 192, 160, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjo26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jphmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdj50")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="decals" type="Node2D" unique_id=792370489]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=70396863]
+sprite_frames = SubResource("SpriteFrames_pp5cw")
+autoplay = "default"
+frame = 1
+frame_progress = 0.56723154
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=435474413]
+position = Vector2(843, 7)
+sprite_frames = SubResource("SpriteFrames_bjo26")
+autoplay = "default"
+frame_progress = 0.54278123

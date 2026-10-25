@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dpeo1ush00epl"]
 
+[ext_resource type="Script" uid="uid://d372eprcw43no" path="res://Scripts/portal.gd" id="1_kvrnr"]
 [ext_resource type="Texture2D" uid="uid://bqq3f81385drn" path="res://Assets/little_guy_pack/portal.png" id="1_lx1xc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvrnr"]
@@ -128,7 +129,11 @@ _data = {
 &"RESET": SubResource("Animation_kvrnr")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pp5cw"]
+radius = 68.61743
+
 [node name="Portal" type="Node2D" unique_id=726327491]
+script = ExtResource("1_kvrnr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694053307]
 sprite_frames = SubResource("SpriteFrames_pp5cw")
@@ -139,3 +144,8 @@ frame_progress = 0.68559855
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=572299576]
 libraries/ = SubResource("AnimationLibrary_kvrnr")
 autoplay = &"Portal_fluctuations"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=29852227]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=477346745]
+shape = SubResource("CircleShape2D_pp5cw")

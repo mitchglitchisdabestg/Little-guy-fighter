@@ -1,19 +1,66 @@
 [gd_scene format=3 uid="uid://qdp040wxkin2"]
 
-[ext_resource type="Texture2D" uid="uid://b3he2i0gxty71" path="res://Assets/Enemys/smudgeplaceholder.png" id="1_85o6k"]
+[ext_resource type="Texture2D" uid="uid://cdfghc81ftjep" path="res://Assets/little_guy_pack/smudge.png" id="1_85o6k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85o6k"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tj8w"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3gol"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(48, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l42l4"]
 atlas = ExtResource("1_85o6k")
-region = Rect2(0, 0, 47, 48)
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gb75"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0pgj"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqxpo"]
+atlas = ExtResource("1_85o6k")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp5cw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l42l4")
+"texture": SubResource("AtlasTexture_85o6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tj8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3gol")
 }],
 "loop": 1,
-"name": &"Placeholder",
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l42l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gb75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0pgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqxpo")
+}],
+"loop": 1,
+"name": &"Walk",
 "speed": 5.0
 }]
 
@@ -30,8 +77,8 @@ size = Vector2(42.833336, 30.888893)
 position = Vector2(90.359985, 91.23998)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Placeholder"
-autoplay = "Placeholder"
+animation = &"Death"
+autoplay = "Walk"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1476181021]
 position = Vector2(79.359985, 111.24)
