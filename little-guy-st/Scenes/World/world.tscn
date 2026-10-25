@@ -14,7 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
 [ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="25_km1ei"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="27_km1ei"]
+[ext_resource type="AudioStream" uid="uid://dcgbtb0o5s4wv" path="res://Assets/Sound/Sound Effects/Kamehameha - Part1.mp3" id="28_fdshi"]
 [ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="28_fxlwc"]
+[ext_resource type="AudioStream" uid="uid://87ckbiw2ttng" path="res://Assets/Sound/Sound Effects/Kamehameha - Part2.wav" id="29_fdshi"]
+[ext_resource type="AudioStream" uid="uid://syi465um1473" path="res://Assets/Sound/Sound Effects/Kamehameha - Part3.mp3" id="30_1diqj"]
 [ext_resource type="Texture2D" uid="uid://d23sh4winim23" path="res://Assets/little_guy_pack/maps/props/balloon_cart.png" id="prop_balloon_cart"]
 [ext_resource type="Texture2D" uid="uid://0gidr4wh6nfo" path="res://Assets/little_guy_pack/maps/props/barrier.png" id="prop_barrier"]
 [ext_resource type="Texture2D" uid="uid://dgxlrpqvu0vjw" path="res://Assets/little_guy_pack/maps/props/bench.png" id="prop_bench"]
@@ -29,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
 [ext_resource type="Texture2D" uid="uid://c3mcnml3bx2dv" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
-[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
+[ext_resource type="Script" uid="uid://dvrhjpwj0ploi" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
@@ -279,6 +282,15 @@ stream = ExtResource("27_km1ei")
 stream = ExtResource("28_fxlwc")
 volume_db = -7.0
 
+[node name="ka_pt1_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1097418572]
+stream = ExtResource("28_fdshi")
+
+[node name="ka_pt2_sfx" type="AudioStreamPlayer" parent="Player" unique_id=127701504]
+stream = ExtResource("29_fdshi")
+
+[node name="ka_pt3_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1185248169]
+stream = ExtResource("30_1diqj")
+
 [node name="Front Props" type="Node2D" parent="." unique_id=1875651415]
 
 [node name="barrier1" type="Sprite2D" parent="Front Props" unique_id=1314302567]
@@ -298,7 +310,6 @@ texture = ExtResource("px_fg")
 [node name="Park Dialogue" type="Node2D" parent="." unique_id=876364245]
 position = Vector2(2175, -100)
 script = ExtResource("talk_trigger")
-scene_name = "park"
 
 [node name="Market Dialogue" type="Node2D" parent="." unique_id=1107647799]
 position = Vector2(3455, -100)

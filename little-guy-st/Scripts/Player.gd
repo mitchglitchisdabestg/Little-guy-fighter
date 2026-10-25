@@ -4,10 +4,14 @@ extends CharacterBody2D
 @onready var animated_sprite = $Visuals/AnimatedSprite2D
 var sprite_start_y: float
 
+#SFX
 @onready var walking_sfx: AudioStreamPlayer = $walking_sfx
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var gunshot_sfx: AudioStreamPlayer = $gunshot_sfx
 @onready var dash_sfx: AudioStreamPlayer = $dash_sfx
+@onready var ka_pt_1_sfx: AudioStreamPlayer = $ka_pt1_sfx
+@onready var ka_pt_2_sfx: AudioStreamPlayer = $ka_pt2_sfx
+@onready var ka_pt_3_sfx: AudioStreamPlayer = $ka_pt3_sfx
 
 #regularspeed and jump
 const SPEED = 200.0
@@ -29,7 +33,7 @@ var is_charging: bool = false
 var is_charge_beam: bool = false
 const PROJECTILE_SCENE = preload("res://Scenes/Attack/Projectiles/projectile.tscn")
 const BEAM_SCENE = preload("res://Scenes/Attack/Projectiles/beam.tscn")
-
+const OVERLAP = 0.1 #Kamehameha SFX
 
 #streets of rage movement (up and down the street)
 const DEPTH_SPEED = 120.0
@@ -75,11 +79,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Charged") and not is_shooting and not is_acting and not is_charging and not is_dashing:
 		is_charging = true
 		animated_sprite.play("Kamekame")
+		$ka_pt1_sfx.play()
 	if Input.is_action_just_released("Charged") and is_charging:
 		is_charging = false
 		is_charge_beam = true
 		animated_sprite.play("Ha")
 		beam_shoot()
+		$ka_pt1_sfx.stop()
+		$ka_pt2_sfx.stop()
+		$ka_pt3_sfx.play()
 	
 	#checking direction, and then flippng the sprite horizontially accordingly
 	if direction.x > 0 :
@@ -119,6 +127,10 @@ func _physics_process(delta: float) -> void:
 #Play animations
 	if is_shooting or is_charging or is_charge_beam:
 		walking_sfx.stop()
+		if is_charging and not $ka_pt2_sfx.playing:
+			var start_length: float = $ka_pt1_sfx.stream.get_length()
+			var start_pos: float = $ka_pt1_sfx.get_playback_position()
+			if not $ka_pt1_sfx.playing or start_pos >= start_length - OVERLAP: $ka_pt2_sfx.play()
 	elif is_dashing: 
 		walking_sfx.stop()
 		if animated_sprite.animation != "Dash":
