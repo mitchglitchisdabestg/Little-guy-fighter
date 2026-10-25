@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bdmekj62vuxhg" path="res://Assets/Player/placeholder.png" id="2_yp2ti"]
 [ext_resource type="PackedScene" uid="uid://dpeo1ush00epl" path="res://Scenes/Stuff/portal.tscn" id="3_7staa"]
 [ext_resource type="PackedScene" uid="uid://qdp040wxkin2" path="res://Scenes/Enemys/smudge.tscn" id="4_vadfg"]
-[ext_resource type="PackedScene" uid="uid://xo3jur4vg237" path="res://Scenes/Enemys/lurch.tscn" id="7_0ph6x"]
 [ext_resource type="PackedScene" uid="uid://bk7hlfbklvckm" path="res://Scenes/NPCS/Green NPC.tscn" id="8_fcotr"]
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
@@ -238,9 +237,6 @@ position = Vector2(-275, 122)
 texture = ExtResource("2_yp2ti")
 
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
-
-[node name="Lurch" parent="Stuff/Enemys" unique_id=130595941 groups=["Enemys"] instance=ExtResource("7_0ph6x")]
-position = Vector2(671, -56)
 
 [node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 groups=["Enemys"] instance=ExtResource("8_pvt60")]
 position = Vector2(465, -69)
