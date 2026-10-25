@@ -28,8 +28,12 @@ func _ready():
 	characters = data["characters"]
 	lines = data["scenes"][scene_name]
 	make_box()
-	get_tree().paused = true
 	show_line()
+	await get_tree().process_frame
+	var cam = get_viewport().get_camera_2d()
+	if cam:
+		cam.reset_smoothing()
+	get_tree().paused = true
 
 func _process(delta):
 	letters += delta * 40
