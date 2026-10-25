@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
+[ext_resource type="AudioStream" uid="uid://dff13nofeqx6y" path="res://Assets/Sound/Sound Effects/Ack.mp3" id="19_1diqj"]
 [ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="25_km1ei"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="27_km1ei"]
 [ext_resource type="AudioStream" uid="uid://dcgbtb0o5s4wv" path="res://Assets/Sound/Sound Effects/Kamehameha - Part1.mp3" id="28_fdshi"]
@@ -245,6 +246,10 @@ position = Vector2(293, -155)
 visible = false
 position = Vector2(93, 99)
 enabled = false
+
+[node name="ack_sfx" type="AudioStreamPlayer" parent="Stuff/Enemys/Sludge" unique_id=972594932]
+stream = ExtResource("19_1diqj")
+volume_db = -15.0
 
 [node name="Node2D" parent="Stuff/Enemys" unique_id=1117632239 instance=ExtResource("7_0ph6x")]
 position = Vector2(564, -53)

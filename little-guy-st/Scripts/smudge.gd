@@ -14,18 +14,29 @@ const Y_MIN_TOLERANCE = 10.0
 const Y_MAX_TOLERANCE = 120.0
 const ATTACK_RANGE = 45.0
 const ATTACK_COOLDOWN = 1.0
+const DEATH_SOUND = preload("res://Assets/Sound/Sound Effects/Ack.mp3")
 
 var cooldown_timer: float = 0.0
 
 
 var health: int = 30
+
 func take_damage(amount: int) -> void:
+	if health <= 0:
+		return
 	health -= amount
 	print("Enemy took damage : health: ", health)
 	if health <= 0:
 		print("Enemy died")
+		play_death_sound()
 		queue_free()
 
+func play_death_sound() -> void:
+	var sfx := AudioStreamPlayer.new()
+	sfx.stream = DEATH_SOUND
+	get_tree().current_scene.add_child(sfx)
+	sfx.finished.connect(sfx.queue_free)   
+	sfx.play()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

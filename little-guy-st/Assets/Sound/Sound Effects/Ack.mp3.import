@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dff13nofeqx6y"
+path="res://.godot/imported/Ack.mp3-2c68e055ce309e21defd90ebe4e373e1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound Effects/Ack.mp3"
+dest_files=["res://.godot/imported/Ack.mp3-2c68e055ce309e21defd90ebe4e373e1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
