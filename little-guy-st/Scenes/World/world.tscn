@@ -81,7 +81,7 @@ shape = SubResource("RectangleShape2D_y0d6x")
 [node name="Stuff" type="Node2D" parent="." unique_id=773335714]
 
 [node name="Green NPC" parent="Stuff" unique_id=431122496 instance=ExtResource("8_fcotr")]
-position = Vector2(-128, -172)
+position = Vector2(-106, -70)
 
 [node name="Portal" parent="Stuff" unique_id=726327491 instance=ExtResource("3_7staa")]
 position = Vector2(3986.9998, -99)
@@ -99,7 +99,7 @@ position = Vector2(280, -154)
 position = Vector2(564, -53)
 
 [node name="Stilts" parent="Stuff/Enemys" unique_id=1796321670 instance=ExtResource("8_pvt60")]
-position = Vector2(669, -74)
+position = Vector2(667, -45)
 
 [node name="Player" parent="." unique_id=862921158 instance=ExtResource("1_t1gg8")]
 position = Vector2(-276, -171)

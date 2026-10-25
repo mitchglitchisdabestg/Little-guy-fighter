@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bk7hlfbklvckm"]
 
 [ext_resource type="Texture2D" uid="uid://xn2e46oranvv" path="res://Assets/little_guy_pack/npcs.png" id="1_0jjge"]
+[ext_resource type="Script" uid="uid://bypol84fxbebl" path="res://Scripts/green_npc.gd" id="1_rybef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rybef"]
 atlas = ExtResource("1_0jjge")
@@ -53,10 +54,11 @@ animations = [{
 }]
 
 [node name="Green NPC" type="Node2D" unique_id=431122496]
+script = ExtResource("1_rybef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35113252]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.18821172
+frame_progress = 0.8411339

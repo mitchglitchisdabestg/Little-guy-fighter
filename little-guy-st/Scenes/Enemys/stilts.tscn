@@ -123,7 +123,8 @@ height = 64.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1537633713]
 sprite_frames = SubResource("SpriteFrames_pp5cw")
-animation = &"Attack"
+animation = &"Walk"
+autoplay = "Walk"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=475104064]
 
