@@ -10,7 +10,8 @@ enum State {
 var current_state: State = State.CHASE_Y
 
 const SPEED = 150.0
-const Y_TOLERANCE = 20.0
+const Y_MIN_TOLERANCE = 10.0
+const Y_MAX_TOLERANCE = 120.0
 const ATTACK_RANGE = 45.0
 const ATTACK_COOLDOWN = 1.0
 
@@ -33,12 +34,12 @@ func _physics_process(delta: float) -> void:
 	print("Y difference",y_difference)
 	match current_state:
 		State.CHASE_Y:
-			if abs(y_difference) > Y_TOLERANCE:
+			if abs(y_difference) > Y_MIN_TOLERANCE and get_slide_collision_count() == 0:
 			# Move vertically toward player
 				velocity.x = 0
 				velocity.y = sign(y_difference) * SPEED
 				print("Setting velocity",velocity)
-				move_and_slide()
+				
 				
 				print("Slide collisions: ", get_slide_collision_count())
 
@@ -53,7 +54,7 @@ func _physics_process(delta: float) -> void:
 				current_state = State.CHASE_X
 	
 		State.CHASE_X:
-			if abs(y_difference) > (Y_TOLERANCE + 15):
+			if abs(y_difference) > Y_MAX_TOLERANCE:
 				current_state = State.CHASE_Y
 				velocity = Vector2.ZERO
 			elif abs(x_difference) > ATTACK_RANGE:
@@ -62,11 +63,12 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector2.ZERO
 				current_state = State.ATTACK
-				current_state = State.COOLDOWN
-			move_and_slide()
+				#current_state = State.COOLDOWN
+			
 		State.ATTACK:
 			velocity = Vector2.ZERO
 			cooldown_timer = ATTACK_COOLDOWN
+			current_state = State.COOLDOWN
 		State.COOLDOWN:
 			velocity = Vector2.ZERO
 			cooldown_timer -= delta
