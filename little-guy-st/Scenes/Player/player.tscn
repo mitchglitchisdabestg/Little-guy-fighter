@@ -442,7 +442,8 @@ animations = [{
 radius = 8.0
 height = 56.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102168226 groups=["player"]]
+motion_mode = 1
 script = ExtResource("1_uvnfx")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1461922275]

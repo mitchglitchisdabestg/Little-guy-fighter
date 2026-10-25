@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://qdp040wxkin2"]
 
 [ext_resource type="Texture2D" uid="uid://cdfghc81ftjep" path="res://Assets/little_guy_pack/smudge.png" id="1_85o6k"]
+[ext_resource type="Script" uid="uid://bnqgs56hmnvgv" path="res://Scripts/smudge.gd" id="1_l42l4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gb75"]
+radius = 99.061035
+height = 198.12207
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp5cw"]
+size = Vector2(42.833336, 30.888893)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85o6k"]
 atlas = ExtResource("1_85o6k")
@@ -64,14 +72,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gb75"]
-radius = 99.061035
-height = 198.12207
+[node name="Sludge" type="CharacterBody2D" unique_id=2119966013]
+script = ExtResource("1_l42l4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp5cw"]
-size = Vector2(42.833336, 30.888893)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834179141]
+position = Vector2(90, 97)
+scale = Vector2(0.43407586, 0.4506258)
+shape = SubResource("CapsuleShape2D_7gb75")
 
-[node name="Sludge" type="Node2D" unique_id=421876324]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1152609822]
+position = Vector2(69, 141)
+scale = Vector2(0.43407583, 0.4506258)
+shape = SubResource("RectangleShape2D_pp5cw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=398697456]
+position = Vector2(113, 142.00002)
+scale = Vector2(0.43407586, 0.4506259)
+shape = SubResource("RectangleShape2D_pp5cw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172457874]
 position = Vector2(90.359985, 91.23998)
@@ -79,23 +96,3 @@ scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Death"
 autoplay = "Walk"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1476181021]
-position = Vector2(79.359985, 111.24)
-scale = Vector2(0.564, 0.564)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=834179141]
-position = Vector2(18.865274, -25.24822)
-scale = Vector2(0.76963806, 0.7989819)
-shape = SubResource("CapsuleShape2D_7gb75")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1152609822]
-position = Vector2(-18.368773, 52.76596)
-scale = Vector2(0.769638, 0.7989819)
-shape = SubResource("RectangleShape2D_pp5cw")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=398697456]
-position = Vector2(59.645424, 54.539043)
-scale = Vector2(0.76963806, 0.7989821)
-shape = SubResource("RectangleShape2D_pp5cw")
