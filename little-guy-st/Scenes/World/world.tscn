@@ -12,6 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
 [ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
+[ext_resource type="Script" path="res://Scripts/parallax.gd" id="px_script"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/balloon_cart.png" id="prop_balloon_cart"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/barrier.png" id="prop_barrier"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/bench.png" id="prop_bench"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/cafe_sign.png" id="prop_cafe_sign"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/crates.png" id="prop_crates"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/flower_bed.png" id="prop_flower_bed"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/fruit_cart.png" id="prop_fruit_cart"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/hydrant.png" id="prop_hydrant"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/lamp_post.png" id="prop_lamp_post"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/mailbox.png" id="prop_mailbox"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/trash_can.png" id="prop_trash_can"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/tree.png" id="prop_tree"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
@@ -27,32 +42,23 @@ loop = true
 
 [node name="Tutorial" type="Node2D" unique_id=1436687875]
 
-[node name="sky 2" type="TextureRect" parent="." unique_id=1973355136]
-offset_left = 2174.0002
-offset_top = -496.0
-offset_right = 4785.3457
-offset_bottom = -299.7202
-scale = Vector2(0.99884075, 3.6525729)
-texture = ExtResource("1_adcqc")
-expand_mode = 1
-
-[node name="Sky 2" type="TextureRect" parent="." unique_id=1201626675]
-offset_left = -2006.0
-offset_top = -512.0
-offset_right = 605.3457
-offset_bottom = -315.7202
-scale = Vector2(0.99884075, 3.6525729)
-texture = ExtResource("1_adcqc")
-expand_mode = 1
-
-[node name="Sky 1" type="TextureRect" parent="." unique_id=1879447480]
+[node name="Sky" type="TextureRect" parent="." unique_id=795425564]
 offset_left = -425.0
-offset_top = -505.0
-offset_right = 2186.3457
-offset_bottom = -308.7202
-scale = Vector2(0.99884075, 3.6525729)
+offset_top = -361.0
+offset_right = 855.0
+offset_bottom = -1.0
 texture = ExtResource("1_adcqc")
-expand_mode = 1
+script = ExtResource("px_script")
+speed = 0.1
+
+[node name="Far" type="TextureRect" parent="." unique_id=423946139]
+offset_left = -425.0
+offset_top = -361.0
+offset_right = 1767.0
+offset_bottom = -1.0
+texture = ExtResource("px_far")
+script = ExtResource("px_script")
+speed = 0.4
 
 [node name="Main" type="TextureRect" parent="." unique_id=1735593947]
 offset_left = -425.0
@@ -60,6 +66,134 @@ offset_top = -361.0
 offset_right = 4055.0
 offset_bottom = -1.0
 texture = ExtResource("1_l1hd3")
+
+[node name="Props" type="Node2D" parent="." unique_id=947876999]
+
+[node name="bench1" type="Sprite2D" parent="Props" unique_id=1497871144]
+position = Vector2(-285, -129)
+texture = ExtResource("prop_bench")
+centered = false
+offset = Vector2(-40, -42)
+
+[node name="trash_can2" type="Sprite2D" parent="Props" unique_id=203694312]
+position = Vector2(-205, -131)
+texture = ExtResource("prop_trash_can")
+centered = false
+offset = Vector2(-14, -38)
+
+[node name="lamp_post3" type="Sprite2D" parent="Props" unique_id=255555737]
+position = Vector2(-45, -129)
+texture = ExtResource("prop_lamp_post")
+centered = false
+offset = Vector2(-12, -138)
+
+[node name="hydrant4" type="Sprite2D" parent="Props" unique_id=1863673106]
+position = Vector2(95, -127)
+texture = ExtResource("prop_hydrant")
+centered = false
+offset = Vector2(-10, -26)
+
+[node name="cafe_sign5" type="Sprite2D" parent="Props" unique_id=1250797845]
+position = Vector2(235, -125)
+texture = ExtResource("prop_cafe_sign")
+centered = false
+offset = Vector2(-16, -38)
+
+[node name="mailbox6" type="Sprite2D" parent="Props" unique_id=302142728]
+position = Vector2(415, -129)
+texture = ExtResource("prop_mailbox")
+centered = false
+offset = Vector2(-12, -42)
+
+[node name="crates7" type="Sprite2D" parent="Props" unique_id=885310972]
+position = Vector2(615, -127)
+texture = ExtResource("prop_crates")
+centered = false
+offset = Vector2(-26, -48)
+
+[node name="lamp_post8" type="Sprite2D" parent="Props" unique_id=1351527726]
+position = Vector2(775, -129)
+texture = ExtResource("prop_lamp_post")
+centered = false
+offset = Vector2(-12, -138)
+
+[node name="bench9" type="Sprite2D" parent="Props" unique_id=224551738]
+position = Vector2(975, -129)
+texture = ExtResource("prop_bench")
+centered = false
+offset = Vector2(-40, -42)
+
+[node name="trash_can10" type="Sprite2D" parent="Props" unique_id=1189709946]
+position = Vector2(1335, -131)
+texture = ExtResource("prop_trash_can")
+centered = false
+offset = Vector2(-14, -38)
+
+[node name="mailbox11" type="Sprite2D" parent="Props" unique_id=561060838]
+position = Vector2(1595, -129)
+texture = ExtResource("prop_mailbox")
+centered = false
+offset = Vector2(-12, -42)
+
+[node name="flower_bed12" type="Sprite2D" parent="Props" unique_id=180521324]
+position = Vector2(1795, -127)
+texture = ExtResource("prop_flower_bed")
+centered = false
+offset = Vector2(-36, -22)
+
+[node name="bench13" type="Sprite2D" parent="Props" unique_id=284570285]
+position = Vector2(1975, -129)
+texture = ExtResource("prop_bench")
+centered = false
+offset = Vector2(-40, -42)
+
+[node name="flower_bed14" type="Sprite2D" parent="Props" unique_id=1031247021]
+position = Vector2(2255, -127)
+texture = ExtResource("prop_flower_bed")
+centered = false
+offset = Vector2(-36, -22)
+
+[node name="tree15" type="Sprite2D" parent="Props" unique_id=998017869]
+position = Vector2(2455, -131)
+texture = ExtResource("prop_tree")
+centered = false
+offset = Vector2(-52, -178)
+
+[node name="balloon_cart16" type="Sprite2D" parent="Props" unique_id=250013383]
+position = Vector2(2615, -127)
+texture = ExtResource("prop_balloon_cart")
+centered = false
+offset = Vector2(-34, -90)
+
+[node name="bench17" type="Sprite2D" parent="Props" unique_id=616819858]
+position = Vector2(2955, -129)
+texture = ExtResource("prop_bench")
+centered = false
+offset = Vector2(-40, -42)
+
+[node name="trash_can18" type="Sprite2D" parent="Props" unique_id=294804716]
+position = Vector2(3095, -131)
+texture = ExtResource("prop_trash_can")
+centered = false
+offset = Vector2(-14, -38)
+
+[node name="tree19" type="Sprite2D" parent="Props" unique_id=1283364967]
+position = Vector2(3295, -131)
+texture = ExtResource("prop_tree")
+centered = false
+offset = Vector2(-52, -178)
+
+[node name="fruit_cart20" type="Sprite2D" parent="Props" unique_id=1011648019]
+position = Vector2(3595, -125)
+texture = ExtResource("prop_fruit_cart")
+centered = false
+offset = Vector2(-46, -66)
+
+[node name="balloon_cart21" type="Sprite2D" parent="Props" unique_id=226938843]
+position = Vector2(3815, -127)
+texture = ExtResource("prop_balloon_cart")
+centered = false
+offset = Vector2(-34, -90)
 
 [node name="Level boundrays" type="StaticBody2D" parent="." unique_id=1443762833]
 position = Vector2(0, -4)
@@ -127,6 +261,22 @@ position_smoothing_speed = 10.0
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1109135011]
 stream = ExtResource("12_pvt60")
 volume_db = -14.0
+
+[node name="Front Props" type="Node2D" parent="." unique_id=1875651415]
+
+[node name="barrier1" type="Sprite2D" parent="Front Props" unique_id=1314302567]
+position = Vector2(1215, -21)
+texture = ExtResource("prop_barrier")
+centered = false
+offset = Vector2(-32, -30)
+
+[node name="FG" type="TextureRect" parent="." unique_id=365862673]
+offset_left = -425.0
+offset_top = -361.0
+offset_right = 4055.0
+offset_bottom = -1.0
+mouse_filter = 2
+texture = ExtResource("px_fg")
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")

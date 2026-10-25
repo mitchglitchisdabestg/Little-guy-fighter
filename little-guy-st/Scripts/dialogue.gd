@@ -92,13 +92,13 @@ func make_box():
 	add_child(people_holder)
 
 	var box = Panel.new()
-	box.position = Vector2(28 * ui_size, screen.y - 112 * ui_size)
-	box.size = Vector2(screen.x - 56 * ui_size, 80 * ui_size)
+	box.position = Vector2(12 * ui_size, screen.y - 66 * ui_size)
+	box.size = Vector2(300 * ui_size, 54 * ui_size)
 	var box_style = StyleBoxFlat.new()
 	box_style.bg_color = Color("fcfbfc")
 	box_style.border_color = Color("514d4a")
-	box_style.set_border_width_all(3 * ui_size)
-	box_style.set_corner_radius_all(10 * ui_size)
+	box_style.set_border_width_all(2 * ui_size)
+	box_style.set_corner_radius_all(7 * ui_size)
 	box.add_theme_stylebox_override("panel", box_style)
 	add_child(box)
 
@@ -114,13 +114,13 @@ func make_box():
 		pic.texture.atlas = load("res://Assets/little_guy_pack/" + c["portrait"] + ".png")
 		pic.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		pic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		pic.size = Vector2(160, 192) * ui_size
-		var y = box.position.y + 20 * ui_size - 192 * ui_size
+		pic.size = Vector2(88, 106) * ui_size
+		var y = box.position.y + 12 * ui_size - 106 * ui_size
 		if c["side"] == "left":
-			pic.position = Vector2((24 + left * 100) * ui_size, y)
+			pic.position = Vector2((14 + left * 55) * ui_size, y)
 			left += 1
 		else:
-			pic.position = Vector2(screen.x - (184 + right * 100) * ui_size, y)
+			pic.position = Vector2(box.position.x + box.size.x - (90 + right * 55) * ui_size, y)
 			right += 1
 			if c["voice"] == "guy":
 				pic.flip_h = true
@@ -131,23 +131,23 @@ func make_box():
 	var tag = PanelContainer.new()
 	var tag_style = StyleBoxFlat.new()
 	tag_style.bg_color = Color("2d2730")
-	tag_style.set_corner_radius_all(6 * ui_size)
-	tag_style.content_margin_left = 14 * ui_size
-	tag_style.content_margin_right = 14 * ui_size
+	tag_style.set_corner_radius_all(4 * ui_size)
+	tag_style.content_margin_left = 9 * ui_size
+	tag_style.content_margin_right = 9 * ui_size
 	tag.add_theme_stylebox_override("panel", tag_style)
-	tag.position = box.position + Vector2(16, -18) * ui_size
+	tag.position = box.position + Vector2(10, -12) * ui_size
 	add_child(tag)
 
 	name_label = Label.new()
 	name_label.add_theme_font_override("font", font)
-	name_label.add_theme_font_size_override("font_size", 22 * ui_size)
+	name_label.add_theme_font_size_override("font_size", 14 * ui_size)
 	tag.add_child(name_label)
 
 	text_label = Label.new()
 	text_label.add_theme_font_override("font", font)
-	text_label.add_theme_font_size_override("font_size", 20 * ui_size)
+	text_label.add_theme_font_size_override("font_size", 12 * ui_size)
 	text_label.add_theme_color_override("font_color", Color("514d4a"))
 	text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	text_label.position = box.position + Vector2(20, 14) * ui_size
-	text_label.size = box.size - Vector2(40, 20) * ui_size
+	text_label.position = box.position + Vector2(12, 10) * ui_size
+	text_label.size = box.size - Vector2(24, 14) * ui_size
 	add_child(text_label)
