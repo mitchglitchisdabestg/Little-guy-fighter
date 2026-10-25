@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bk7hlfbklvckm" path="res://Scenes/NPCS/Green NPC.tscn" id="8_fcotr"]
 [ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="8_pvt60"]
 [ext_resource type="PackedScene" uid="uid://dy02sxmejmsuw" path="res://Scenes/UI/Dialouge/tutorial_dialouge.tscn" id="9_y0d6x"]
+[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="12_pvt60"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pp5cw"]
 
@@ -119,7 +120,10 @@ position_smoothing_speed = 10.0
 
 [node name="Tutorial dialouge" parent="Player" unique_id=1400729136 instance=ExtResource("9_y0d6x")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=32954349]
+[node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1109135011]
+stream = ExtResource("12_pvt60")
+
+[node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")
 volume_db = -3.0
 autoplay = true

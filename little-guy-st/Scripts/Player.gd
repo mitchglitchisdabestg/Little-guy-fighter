@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animated_sprite = $Visuals/AnimatedSprite2D
 var sprite_start_y: float
 
+@onready var jump_sfx: AudioStreamPlayer = $jump_sfx
+
 #regularspeed and jump
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -41,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		jump_velocity = JUMP_VELOCITY
 		is_acting = true
 		animated_sprite.play("Jump")
+		jump_sfx.play()
 	# Handle jump.
 	if is_acting:
 		jump_velocity += 980.0 * delta
