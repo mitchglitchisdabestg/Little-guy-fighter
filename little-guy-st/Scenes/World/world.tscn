@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="28_fxlwc"]
 [ext_resource type="AudioStream" uid="uid://87ckbiw2ttng" path="res://Assets/Sound/Sound Effects/Kamehameha - Part2.wav" id="29_fdshi"]
 [ext_resource type="AudioStream" uid="uid://syi465um1473" path="res://Assets/Sound/Sound Effects/Kamehameha - Part3.mp3" id="30_1diqj"]
+[ext_resource type="AudioStream" uid="uid://d1tjab6csxxc" path="res://Assets/Sound/Sound Effects/minecraft-critical-hit.mp3" id="31_i0ina"]
 [ext_resource type="Texture2D" uid="uid://d23sh4winim23" path="res://Assets/little_guy_pack/maps/props/balloon_cart.png" id="prop_balloon_cart"]
 [ext_resource type="Texture2D" uid="uid://0gidr4wh6nfo" path="res://Assets/little_guy_pack/maps/props/barrier.png" id="prop_barrier"]
 [ext_resource type="Texture2D" uid="uid://dgxlrpqvu0vjw" path="res://Assets/little_guy_pack/maps/props/bench.png" id="prop_bench"]
@@ -296,6 +297,9 @@ stream = ExtResource("29_fdshi")
 
 [node name="ka_pt3_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1185248169]
 stream = ExtResource("30_1diqj")
+
+[node name="hurt_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1176876942]
+stream = ExtResource("31_i0ina")
 
 [node name="Front Props" type="Node2D" parent="." unique_id=1875651415]
 light_mask = 2

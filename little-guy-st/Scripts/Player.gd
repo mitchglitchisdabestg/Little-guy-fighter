@@ -12,6 +12,7 @@ var sprite_start_y: float
 @onready var ka_pt_1_sfx: AudioStreamPlayer = $ka_pt1_sfx
 @onready var ka_pt_2_sfx: AudioStreamPlayer = $ka_pt2_sfx
 @onready var ka_pt_3_sfx: AudioStreamPlayer = $ka_pt3_sfx
+@onready var hurt_sfx: AudioStreamPlayer = $hurt_sfx
 
 #regularspeed and jump
 const SPEED = 200.0
@@ -50,6 +51,7 @@ var current_health: = 100
 func take_damage(amount: int) -> void:
 	current_health -= amount
 	print("Player took damage : health: ", current_health)
+	$hurt_sfx.play()
 	if health_bar:
 		health_bar.value = current_health
 		
