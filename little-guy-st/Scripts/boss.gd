@@ -32,7 +32,8 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		is_dead = true
 		velocity = Vector2.ZERO
-		print("Stilts died")
+		print("BOSS died")
+		get_tree().change_scene_to_file("res://Scenes/UI/win screen/end_screen.tscn")
 		
 		# Disable collision shape safely so bullets/player pass through during death
 		if has_node("CollisionShape2D"):

@@ -5,6 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://87ckbiw2ttng" path="res://Assets/Sound/Sound Effects/Kamehameha - Part2.wav" id="19_o7c2m"]
 [ext_resource type="AudioStream" uid="uid://syi465um1473" path="res://Assets/Sound/Sound Effects/Kamehameha - Part3.mp3" id="20_bpvin"]
 [ext_resource type="AudioStream" uid="uid://d1tjab6csxxc" path="res://Assets/Sound/Sound Effects/minecraft-critical-hit.mp3" id="21_uysjx"]
+[ext_resource type="PackedScene" uid="uid://b6msksl5ddkgq" path="res://Scenes/Enemys/Boss/boss.tscn" id="24_o7c2m"]
+[ext_resource type="PackedScene" uid="uid://irj4f1yex0ux" path="res://Scenes/Enemys/stilts.tscn" id="25_2310j"]
+[ext_resource type="PackedScene" uid="uid://qdp040wxkin2" path="res://Scenes/Enemys/smudge.tscn" id="26_y7quq"]
 [ext_resource type="Script" uid="uid://ch1w21n7vt0vl" path="res://Scripts/sprite_anim.gd" id="anim"]
 [ext_resource type="Texture2D" uid="uid://b063horn6v8gp" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
 [ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="dash"]
@@ -225,6 +228,11 @@ position = Vector2(3163, -156)
 shape = SubResource("side_wall")
 
 [node name="Enemys" type="Node2D" parent="." unique_id=412035360]
+position = Vector2(3, -172)
+
+[node name="Boss" parent="Enemys" unique_id=824831527 instance=ExtResource("24_o7c2m")]
+position = Vector2(2923, -274)
+scale = Vector2(0.27999997, 0.27999997)
 
 [node name="Player" parent="." unique_id=1045010468 instance=ExtResource("player")]
 position = Vector2(149, -100)
@@ -295,3 +303,15 @@ scene_name = "boss"
 stream = SubResource("AudioStreamMP3_uskea")
 volume_db = -14.0
 autoplay = true
+
+[node name="Stilts" parent="." unique_id=195494332 groups=["Enemys"] instance=ExtResource("25_2310j")]
+position = Vector2(532, -95)
+
+[node name="Sludge" parent="." unique_id=2119966013 groups=["Enemys"] instance=ExtResource("26_y7quq")]
+position = Vector2(839, -189)
+
+[node name="Stilts2" parent="." unique_id=530702241 groups=["Enemys"] instance=ExtResource("25_2310j")]
+position = Vector2(1412, -93)
+
+[node name="Sludge2" parent="." unique_id=693946499 groups=["Enemys"] instance=ExtResource("26_y7quq")]
+position = Vector2(1720, -217)
