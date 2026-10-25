@@ -224,7 +224,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Blue_star",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -238,7 +238,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Dash",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Fall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -280,7 +280,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Green_star",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -291,7 +291,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Ha",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -314,7 +314,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -331,7 +331,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Jump",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -345,7 +345,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Kamekame",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -356,7 +356,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Pew_Pew",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [],
 "loop": 1,
@@ -384,7 +384,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Reload",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -401,7 +401,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Super_star",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -418,7 +418,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -435,7 +435,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Yellow_star",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp5cw"]

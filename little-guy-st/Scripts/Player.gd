@@ -164,10 +164,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func shoot_projectile() -> void:
 	var projectile = PROJECTILE_SCENE.instantiate()
 	projectile.direction = -1.0 if animated_sprite.flip_h else 1.0
-	var spawn_offset =Vector2(
-		-5 if animated_sprite.flip_h else 5,
-		-5
-		)
+	#gun point (end of the gun in the shoot frames)
+	var gun_x = -23 if animated_sprite.flip_h else 27
+	var spawn_offset = Vector2(gun_x, -6 + visuals.position.y)
 	projectile.global_position = global_position + spawn_offset
 	get_tree().current_scene.add_child(projectile)
 	
@@ -176,9 +175,8 @@ func beam_shoot() -> void:
 	beam.direction = -1.0 if animated_sprite.flip_h else 1.0
 
 	
-	var spawn_offset =Vector2(
-		-2 if animated_sprite.flip_h else 2,
-		-2
-		)
+	#hands (where the beam comes out)
+	var hand_x = -20 if animated_sprite.flip_h else 24
+	var spawn_offset = Vector2(hand_x, -9 + visuals.position.y)
 	beam.global_position = global_position + spawn_offset
 	get_tree().current_scene.add_child(beam)

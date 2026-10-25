@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7ripdlg2lvl2"]
+
+[ext_resource type="Script" path="res://Scripts/dialogue.gd" id="1_dlg"]
+[ext_resource type="FontFile" uid="uid://d5a5nc4rwfox" path="res://Assets/Fonts/augiepixel.ttf" id="2_font"]
+
+[node name="Rip dialouge" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_dlg")
+scene_name = "rip"
+font = ExtResource("2_font")

@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://c8rip2world2x"]
+
+[ext_resource type="PackedScene" uid="uid://kt33apddjbb0" path="res://Scenes/Player/player.tscn" id="player"]
+[ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://Scenes/UI/Pause menu/pause_menu.tscn" id="pause"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/Dialouge/rip_dialouge.tscn" id="dialogue"]
+[ext_resource type="AudioStream" uid="uid://cyiqlyhcsarfg" path="res://Assets/Sound/Sound Effects/Jump Sound Effect.mp3" id="jump"]
+[ext_resource type="AudioStream" uid="uid://cd31t4mq0wnlo" path="res://Assets/Sound/Sound Effects/Gun Shot.mp3" id="gun"]
+[ext_resource type="AudioStream" uid="uid://cxm11rp3nqsa8" path="res://Assets/Sound/Sound Effects/Dash Sound Effect.wav" id="dash"]
+[ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="walk"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/Music/tuff (2).mp3" id="music"]
+[ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_far.png" id="far"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_main.png" id="main"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_fg.png" id="fg"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/broken_lamp.png" id="prop_broken_lamp"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/dead_tree.png" id="prop_dead_tree"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
+[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
+
+[sub_resource type="WorldBoundaryShape2D" id="floor"]
+
+[sub_resource type="RectangleShape2D" id="top_wall"]
+size = Vector2(3320, 121)
+
+[sub_resource type="RectangleShape2D" id="side_wall"]
+size = Vector2(124, 323)
+
+[node name="Level 2" type="Node2D" unique_id=1119132783]
+
+[node name="Sky" type="TextureRect" parent="." unique_id=677662261]
+offset_left = 0.0
+offset_top = -361.0
+offset_right = 1280.0
+offset_bottom = -1.0
+texture = ExtResource("sky")
+script = ExtResource("px_script")
+speed = 0.1
+
+[node name="Far" type="TextureRect" parent="." unique_id=1511911446]
+offset_left = 0.0
+offset_top = -361.0
+offset_right = 1648.0
+offset_bottom = -1.0
+texture = ExtResource("far")
+script = ExtResource("px_script")
+speed = 0.4
+
+[node name="Main" type="TextureRect" parent="." unique_id=1236299686]
+offset_left = 0.0
+offset_top = -361.0
+offset_right = 3120.0
+offset_bottom = -1.0
+texture = ExtResource("main")
+
+[node name="Props" type="Node2D" parent="." unique_id=1531105596]
+
+[node name="broken_lamp1" type="Sprite2D" parent="Props" unique_id=851158381]
+position = Vector2(240, -129)
+texture = ExtResource("prop_broken_lamp")
+centered = false
+offset = Vector2(-24, -126)
+
+[node name="goo_puddle2" type="Sprite2D" parent="Props" unique_id=406231922]
+position = Vector2(440, -61)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="grey_crates3" type="Sprite2D" parent="Props" unique_id=919567871]
+position = Vector2(600, -127)
+texture = ExtResource("prop_grey_crates")
+centered = false
+offset = Vector2(-26, -26)
+
+[node name="dead_tree4" type="Sprite2D" parent="Props" unique_id=123322617]
+position = Vector2(840, -131)
+texture = ExtResource("prop_dead_tree")
+centered = false
+offset = Vector2(-40, -138)
+
+[node name="goo_puddle5" type="Sprite2D" parent="Props" unique_id=904779144]
+position = Vector2(1040, -97)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="broken_lamp6" type="Sprite2D" parent="Props" unique_id=1136244209]
+position = Vector2(1220, -129)
+texture = ExtResource("prop_broken_lamp")
+centered = false
+offset = Vector2(-24, -126)
+
+[node name="grey_crates7" type="Sprite2D" parent="Props" unique_id=688513901]
+position = Vector2(1400, -127)
+texture = ExtResource("prop_grey_crates")
+centered = false
+offset = Vector2(-26, -26)
+
+[node name="goo_puddle8" type="Sprite2D" parent="Props" unique_id=1481709766]
+position = Vector2(1560, -31)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="dead_tree9" type="Sprite2D" parent="Props" unique_id=1840209196]
+position = Vector2(1760, -131)
+texture = ExtResource("prop_dead_tree")
+centered = false
+offset = Vector2(-40, -138)
+
+[node name="goo_puddle10" type="Sprite2D" parent="Props" unique_id=1088311219]
+position = Vector2(2040, -61)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="broken_lamp11" type="Sprite2D" parent="Props" unique_id=1583036430]
+position = Vector2(2400, -125)
+texture = ExtResource("prop_broken_lamp")
+centered = false
+offset = Vector2(-24, -126)
+
+[node name="goo_puddle12" type="Sprite2D" parent="Props" unique_id=1956165774]
+position = Vector2(2560, -25)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="goo_puddle13" type="Sprite2D" parent="Props" unique_id=1391619160]
+position = Vector2(2920, -81)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="Level boundrays" type="StaticBody2D" parent="." unique_id=588862552]
+position = Vector2(0, -4)
+
+[node name="Floor" type="CollisionShape2D" parent="Level boundrays" unique_id=1298704003]
+shape = SubResource("floor")
+
+[node name="Top" type="CollisionShape2D" parent="Level boundrays" unique_id=103577443]
+position = Vector2(1560, -254)
+shape = SubResource("top_wall")
+
+[node name="Left" type="CollisionShape2D" parent="Level boundrays" unique_id=1520176220]
+position = Vector2(-22, -150.5)
+shape = SubResource("side_wall")
+
+[node name="Right" type="CollisionShape2D" parent="Level boundrays" unique_id=1440529904]
+position = Vector2(3163, -156)
+shape = SubResource("side_wall")
+
+[node name="Enemys" type="Node2D" parent="." unique_id=412035360]
+
+[node name="Player" parent="." unique_id=1045010468 instance=ExtResource("player")]
+position = Vector2(149, -171)
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=889533884]
+position = Vector2(20, -86)
+zoom = Vector2(1.8, 1.8)
+limit_left = 0
+limit_top = -361
+limit_right = 3120
+limit_bottom = -1
+limit_smoothed = true
+position_smoothing_speed = 10.0
+
+[node name="Pause Menu" parent="Player/Camera2D" unique_id=448466428 instance=ExtResource("pause")]
+offset_left = -4.0
+offset_top = 14.0
+offset_right = -4.0
+offset_bottom = 14.0
+
+[node name="Rip dialouge" parent="Player" unique_id=829457621 instance=ExtResource("dialogue")]
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=551511994]
+stream = ExtResource("jump")
+volume_db = -14.0
+
+[node name="gunshot_sfx" type="AudioStreamPlayer" parent="Player" unique_id=226324276]
+stream = ExtResource("gun")
+
+[node name="dash_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1337411384]
+stream = ExtResource("dash")
+
+[node name="walking_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1858402834]
+stream = ExtResource("walk")
+volume_db = -7.0
+
+[node name="FG" type="TextureRect" parent="." unique_id=528709849]
+offset_left = 0.0
+offset_top = -361.0
+offset_right = 3120.0
+offset_bottom = -1.0
+mouse_filter = 2
+texture = ExtResource("fg")
+
+[node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=260222960]
+stream = ExtResource("music")
+volume_db = -3.0
+autoplay = true
