@@ -133,6 +133,72 @@ texture = ExtResource("prop_goo_puddle")
 centered = false
 offset = Vector2(-40, -18)
 
+[node name="dead_tree14" type="Sprite2D" parent="Props" unique_id=1985118167]
+position = Vector2(380, -131)
+texture = ExtResource("prop_dead_tree")
+centered = false
+offset = Vector2(-40, -138)
+
+[node name="goo_puddle15" type="Sprite2D" parent="Props" unique_id=1427339323]
+position = Vector2(700, -41)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="grey_crates16" type="Sprite2D" parent="Props" unique_id=1992966807]
+position = Vector2(1060, -127)
+texture = ExtResource("prop_grey_crates")
+centered = false
+offset = Vector2(-26, -26)
+
+[node name="goo_puddle17" type="Sprite2D" parent="Props" unique_id=1007723226]
+position = Vector2(1300, -71)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="broken_lamp18" type="Sprite2D" parent="Props" unique_id=549622258]
+position = Vector2(1580, -129)
+texture = ExtResource("prop_broken_lamp")
+centered = false
+offset = Vector2(-24, -126)
+
+[node name="grey_crates19" type="Sprite2D" parent="Props" unique_id=1533198400]
+position = Vector2(1900, -127)
+texture = ExtResource("prop_grey_crates")
+centered = false
+offset = Vector2(-26, -26)
+
+[node name="dead_tree20" type="Sprite2D" parent="Props" unique_id=1414409197]
+position = Vector2(2160, -131)
+texture = ExtResource("prop_dead_tree")
+centered = false
+offset = Vector2(-40, -138)
+
+[node name="grey_crates21" type="Sprite2D" parent="Props" unique_id=889148131]
+position = Vector2(2240, -127)
+texture = ExtResource("prop_grey_crates")
+centered = false
+offset = Vector2(-26, -26)
+
+[node name="goo_puddle22" type="Sprite2D" parent="Props" unique_id=662379827]
+position = Vector2(2280, -41)
+texture = ExtResource("prop_goo_puddle")
+centered = false
+offset = Vector2(-40, -18)
+
+[node name="dead_tree23" type="Sprite2D" parent="Props" unique_id=1889072314]
+position = Vector2(2740, -131)
+texture = ExtResource("prop_dead_tree")
+centered = false
+offset = Vector2(-40, -138)
+
+[node name="broken_lamp24" type="Sprite2D" parent="Props" unique_id=737028891]
+position = Vector2(3040, -125)
+texture = ExtResource("prop_broken_lamp")
+centered = false
+offset = Vector2(-24, -126)
+
 [node name="Level boundrays" type="StaticBody2D" parent="." unique_id=588862552]
 position = Vector2(0, -4)
 
@@ -154,7 +220,7 @@ shape = SubResource("side_wall")
 [node name="Enemys" type="Node2D" parent="." unique_id=412035360]
 
 [node name="Player" parent="." unique_id=1045010468 instance=ExtResource("player")]
-position = Vector2(149, -171)
+position = Vector2(149, -100)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=889533884]

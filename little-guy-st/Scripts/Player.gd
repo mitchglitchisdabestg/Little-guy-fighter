@@ -148,8 +148,7 @@ func _physics_process(delta: float) -> void:
 
 		
 func _ready() -> void:
-	depth_position = clamp(position.y,Level_Top,Level_Bottom)
-	position.y = depth_position
+	depth_position = position.y
 	sprite_start_y = visuals.position.y
 
 
