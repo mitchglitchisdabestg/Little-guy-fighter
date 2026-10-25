@@ -15,22 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bybn3sxg51mm8" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
 [ext_resource type="Texture2D" uid="uid://jj43luy7nbri" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://sgj0yh8yxl7f" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
 [ext_resource type="AudioStream" uid="uid://dprvle61rho72" path="res://Assets/Sound/Sound Effects/Walking SFX.mp3" id="walk"]
-=======
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_sky.png" id="sky"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_far.png" id="far"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_main.png" id="main"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/worldB_fg.png" id="fg"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/broken_lamp.png" id="prop_broken_lamp"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/dead_tree.png" id="prop_dead_tree"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/goo_puddle.png" id="prop_goo_puddle"]
-[ext_resource type="Texture2D" path="res://Assets/little_guy_pack/maps/props/grey_crates.png" id="prop_grey_crates"]
 [ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="talk_trigger"]
 [ext_resource type="Script" path="res://Scripts/sprite_anim.gd" id="anim"]
 [ext_resource type="Texture2D" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
->>>>>>> 067d17349d2df161ca70f3e22cecff7cf572ff0d
 
 [sub_resource type="WorldBoundaryShape2D" id="floor"]
 
