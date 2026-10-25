@@ -126,8 +126,9 @@ position_smoothing_speed = 10.0
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1109135011]
 stream = ExtResource("12_pvt60")
+volume_db = -14.0
 
 [node name="Backround Music" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")
-volume_db = -3.0
+volume_db = -14.0
 autoplay = true
