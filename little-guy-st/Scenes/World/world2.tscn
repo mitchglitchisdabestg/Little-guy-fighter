@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c8rip2world2x"]
 
 [ext_resource type="AudioStream" uid="uid://jmw8m450qjfy" path="res://Assets/Sound/Sound Effects/Lazer Gun sound.mp3" id="13_tty7c"]
+[ext_resource type="AudioStream" uid="uid://dcgbtb0o5s4wv" path="res://Assets/Sound/Sound Effects/Kamehameha - Part1.mp3" id="18_uysjx"]
+[ext_resource type="AudioStream" uid="uid://87ckbiw2ttng" path="res://Assets/Sound/Sound Effects/Kamehameha - Part2.wav" id="19_o7c2m"]
+[ext_resource type="AudioStream" uid="uid://syi465um1473" path="res://Assets/Sound/Sound Effects/Kamehameha - Part3.mp3" id="20_bpvin"]
 [ext_resource type="AudioStream" uid="uid://ddd6dltyft1jn" path="res://Assets/Sound/Music/Dark Theme.wav" id="20_ogoqw"]
 [ext_resource type="Script" uid="uid://ch1w21n7vt0vl" path="res://Scripts/sprite_anim.gd" id="anim"]
 [ext_resource type="Texture2D" uid="uid://b063horn6v8gp" path="res://Assets/little_guy_pack/boss_portal.png" id="boss_portal"]
@@ -254,6 +257,15 @@ stream = ExtResource("dash")
 [node name="walking_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1858402834]
 stream = ExtResource("walk")
 volume_db = -7.0
+
+[node name="ka_pt1_sfx" type="AudioStreamPlayer" parent="Player" unique_id=2130597584]
+stream = ExtResource("18_uysjx")
+
+[node name="ka_pt2_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1739609002]
+stream = ExtResource("19_o7c2m")
+
+[node name="ka_pt3_sfx" type="AudioStreamPlayer" parent="Player" unique_id=1192293975]
+stream = ExtResource("20_bpvin")
 
 [node name="FG" type="TextureRect" parent="." unique_id=528709849]
 offset_top = -361.0
