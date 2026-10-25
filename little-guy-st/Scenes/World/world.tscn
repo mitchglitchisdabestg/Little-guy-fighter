@@ -237,7 +237,7 @@ texture = ExtResource("2_yp2ti")
 
 [node name="Enemys" type="Node2D" parent="Stuff" unique_id=1319675790]
 
-[node name="Sludge" parent="Stuff/Enemys" unique_id=421876324 instance=ExtResource("4_vadfg")]
+[node name="Sludge" parent="Stuff/Enemys" unique_id=421876324 groups=["Enemys"] instance=ExtResource("4_vadfg")]
 position = Vector2(293, -155)
 
 [node name="Camera2D" type="Camera2D" parent="Stuff/Enemys/Sludge" unique_id=63250817]

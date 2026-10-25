@@ -78,6 +78,8 @@ height = 96.0
 
 [node name="Sludge" type="CharacterBody2D" unique_id=2119966013]
 position = Vector2(-38, -151)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_l42l4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834179141]
@@ -101,7 +103,7 @@ scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_pp5cw")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.24132256
+frame_progress = 0.53763175
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=15037279]
 

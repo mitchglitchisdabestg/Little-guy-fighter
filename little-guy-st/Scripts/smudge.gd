@@ -18,6 +18,15 @@ const ATTACK_COOLDOWN = 1.0
 var cooldown_timer: float = 0.0
 
 
+var health: int = 30
+func take_damage(amount: int) -> void:
+	health -= amount
+	print("Enemy took damage : health: ", health)
+	if health <= 0:
+		print("Enemy died")
+		queue_free()
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
