@@ -29,10 +29,7 @@ func _ready():
 	lines = data["scenes"][scene_name]
 	make_box()
 	show_line()
-	await get_tree().process_frame
-	var cam = get_viewport().get_camera_2d()
-	if cam:
-		cam.reset_smoothing()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = true
 
 func _process(delta):
