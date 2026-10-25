@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://dy02sxmejmsuw"]
 
-[ext_resource type="PackedScene" uid="uid://x1fmf2hf2fs7" path="res://Scenes/UI/Dialouge/dialougebase.tscn" id="1_khqgk"]
+[ext_resource type="Script" path="res://Scripts/dialogue.gd" id="1_dlg"]
+[ext_resource type="FontFile" uid="uid://d5a5nc4rwfox" path="res://Assets/Fonts/augiepixel.ttf" id="2_font"]
 
-[node name="Tutorial dialouge" type="Control" unique_id=1400729136]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="dialouge" parent="." unique_id=1220094107 instance=ExtResource("1_khqgk")]
-layout_mode = 1
-scale = Vector2(1, 0.9722222)
+[node name="Tutorial dialouge" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_dlg")
+scene_name = "intro"
+font = ExtResource("2_font")

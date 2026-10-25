@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cf7v5evgug71l"]
+
+[ext_resource type="Texture2D" uid="uid://dn7iw2achlmrk" path="res://Assets/little_guy_pack/maps/worldA_sky.png" id="1_q6hk6"]
+[ext_resource type="FontFile" uid="uid://d5a5nc4rwfox" path="res://Assets/Fonts/augiepixel.ttf" id="2_oe0sp"]
+
+[node name="Node2D" type="Node2D" unique_id=225734186]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=339243487]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_q6hk6")
+
+[node name="Label3" type="Label" parent="." unique_id=1160781253]
+offset_left = 277.0
+offset_top = 100.0
+offset_right = 933.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oe0sp")
+theme_override_font_sizes/font_size = 200
+text = "Fadeout"
+
+[node name="Label4" type="Label" parent="." unique_id=1701187835]
+offset_left = 263.0
+offset_top = 85.0
+offset_right = 1083.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.5176471, 0.9764706, 0.9764706, 0.28235295)
+theme_override_fonts/font = ExtResource("2_oe0sp")
+theme_override_font_sizes/font_size = 220
+text = "Fadeout"
+
+[node name="Label2" type="Label" parent="." unique_id=206794987]
+offset_left = 292.0
+offset_top = 96.0
+offset_right = 948.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0.00825582, 0.11529789, 0.4769929, 1)
+theme_override_fonts/font = ExtResource("2_oe0sp")
+theme_override_font_sizes/font_size = 200
+text = "Fadeout"
+
+[node name="Label" type="Label" parent="." unique_id=1056947407]
+offset_left = 311.0
+offset_top = 97.0
+offset_right = 967.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0.04445254, 0.26956078, 0.94356716, 1)
+theme_override_fonts/font = ExtResource("2_oe0sp")
+theme_override_font_sizes/font_size = 200
+text = "Fadeout"

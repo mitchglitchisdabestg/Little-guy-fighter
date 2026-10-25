@@ -118,12 +118,6 @@ limit_smoothed = true
 position_smoothing_speed = 10.0
 
 [node name="Tutorial dialouge" parent="Player" unique_id=1400729136 instance=ExtResource("9_y0d6x")]
-visible = false
-offset_left = 102.0
-offset_top = -242.0
-offset_right = 102.0
-offset_bottom = -242.0
-scale = Vector2(0.65474534, 0.6170839)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=32954349]
 stream = SubResource("AudioStreamMP3_y0d6x")

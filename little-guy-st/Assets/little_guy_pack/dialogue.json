@@ -1,0 +1,244 @@
+{
+ "characters": {
+  "red": {
+   "name": "Red",
+   "color": "#db9692",
+   "font": "Sniglet",
+   "weight": 800,
+   "voice": "guy",
+   "pitch": 1.15,
+   "side": "left",
+   "portrait": "portrait_red"
+  },
+  "mayor": {
+   "name": "Mayor Peri",
+   "color": "#9196db",
+   "font": "Sniglet",
+   "weight": 400,
+   "voice": "guy",
+   "pitch": 0.8,
+   "side": "left",
+   "portrait": "portrait_mayor"
+  },
+  "pip": {
+   "name": "Pip",
+   "color": "#db91d3",
+   "font": "Sniglet",
+   "weight": 800,
+   "voice": "guy",
+   "pitch": 1.35,
+   "side": "right",
+   "portrait": "portrait_pip"
+  },
+  "smudge": {
+   "name": "Smudge",
+   "color": "#d9d4d8",
+   "font": "Finger Paint",
+   "weight": 400,
+   "voice": "monster",
+   "pitch": 1.1,
+   "side": "right",
+   "portrait": "portrait_smudge",
+   "wonky": true
+  },
+  "grubble": {
+   "name": "GRUBBLE",
+   "color": "#fcfbfc",
+   "font": "Finger Paint",
+   "weight": 400,
+   "voice": "monster",
+   "pitch": 0.75,
+   "side": "right",
+   "portrait": "portrait_grubble",
+   "wonky": true,
+   "shake": true
+  },
+  "maw": {
+   "name": "THE MAW",
+   "color": "#db9692",
+   "font": "Finger Paint",
+   "weight": 400,
+   "voice": "monster",
+   "pitch": 0.6,
+   "side": "right",
+   "portrait": "portrait_maw",
+   "wonky": true,
+   "shake": true
+  }
+ },
+ "scenes": {
+  "intro": [
+   [
+    "mayor",
+    "worried",
+    "Red! Red! Something tore a hole in the sky over the market!"
+   ],
+   [
+    "red",
+    "shock",
+    "A hole?!"
+   ],
+   [
+    "mayor",
+    "worried",
+    "Grey monsters are pouring out of it... and they're EATING our colours!"
+   ],
+   [
+    "red",
+    "determined",
+    "I'm just a little guy. But I've got a little gun."
+   ],
+   [
+    "mayor",
+    "happy",
+    "Grab the stars they drop! And use coins at the ammo crates. Go get 'em!"
+   ]
+  ],
+  "smudge": [
+   [
+    "smudge",
+    "grin",
+    "Blorp! Colours taste gooooood."
+   ],
+   [
+    "red",
+    "angry",
+    "Spit them out right now!"
+   ],
+   [
+    "smudge",
+    "angry",
+    "Make me, little guy. Blorp blorp!"
+   ]
+  ],
+  "park": [
+   [
+    "red",
+    "neutral",
+    "The park's still bright. The monsters must've come through here..."
+   ],
+   [
+    "red",
+    "determined",
+    "The hole's past the market. Keep going!"
+   ]
+  ],
+  "portal": [
+   [
+    "red",
+    "shock",
+    "There it is... it's pulling everything in!"
+   ],
+   [
+    "mayor",
+    "worried",
+    "Red, you can't go IN there!"
+   ],
+   [
+    "red",
+    "determined",
+    "Someone has to bring the colours back. Here goes nothing!"
+   ]
+  ],
+  "rip": [
+   [
+    "red",
+    "shock",
+    "It's all... grey. Even the sky."
+   ],
+   [
+    "red",
+    "determined",
+    "Stay brave, Red. Deeper we go."
+   ]
+  ],
+  "boss": [
+   [
+    "grubble",
+    "laugh",
+    "SKREEEE! Another little snack, all full of colour!"
+   ],
+   [
+    "red",
+    "angry",
+    "Give the colours back, you big wiggly noodle!"
+   ],
+   [
+    "grubble",
+    "angry",
+    "I'll squash you FLAT!"
+   ]
+  ],
+  "phase2": [
+   [
+    "maw",
+    "roar",
+    "You popped my body... so now I'll just EAT you myself!"
+   ],
+   [
+    "red",
+    "shock",
+    "It can FLY?!"
+   ],
+   [
+    "maw",
+    "angry",
+    "Watch the ground, snack. I'm coming DOWN!"
+   ]
+  ],
+  "ending": [
+   [
+    "pip",
+    "dazed",
+    "W-where am I? It was so dark in there..."
+   ],
+   [
+    "red",
+    "happy",
+    "You're safe! You were stuck inside that thing."
+   ],
+   [
+    "pip",
+    "happy",
+    "Look! I'm colourful again! Let's go home and paint EVERYTHING!"
+   ],
+   [
+    "red",
+    "happy",
+    "I'm just a little guy... but that was a pretty big day."
+   ]
+  ]
+ },
+ "triggers": {
+  "A": [
+   {
+    "scene": "intro",
+    "x": 0
+   },
+   {
+    "scene": "smudge",
+    "x": 340
+   },
+   {
+    "scene": "park",
+    "x": 1300
+   },
+   {
+    "scene": "portal",
+    "x": 2080
+   }
+  ],
+  "B": [
+   {
+    "scene": "rip",
+    "x": 0
+   },
+   {
+    "scene": "boss",
+    "x": 1180
+   }
+  ],
+  "boss_phase2": "phase2",
+  "boss_dead": "ending"
+ }
+}
