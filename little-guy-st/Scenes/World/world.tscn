@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://bhngouchqhw48" path="res://Assets/little_guy_pack/maps/props/lamp_post.png" id="prop_lamp_post"]
 [ext_resource type="Texture2D" uid="uid://doesojh6xroi5" path="res://Assets/little_guy_pack/maps/props/mailbox.png" id="prop_mailbox"]
 [ext_resource type="Texture2D" uid="uid://csm7vsicbx2qb" path="res://Assets/little_guy_pack/maps/props/trash_can.png" id="prop_trash_can"]
-[ext_resource type="Texture2D" uid="uid://olnoxcufoqqd" path="res://Assets/little_guy_pack/maps/props/tree.png" id="prop_tree"]
 [ext_resource type="Texture2D" uid="uid://cv4cuyw8gv3ja" path="res://Assets/little_guy_pack/maps/worldA_far.png" id="px_far"]
 [ext_resource type="Texture2D" uid="uid://c3mcnml3bx2dv" path="res://Assets/little_guy_pack/maps/worldA_fg.png" id="px_fg"]
 [ext_resource type="Script" uid="uid://h82h8knrve3a" path="res://Scripts/parallax.gd" id="px_script"]
@@ -163,12 +162,6 @@ texture = ExtResource("prop_flower_bed")
 centered = false
 offset = Vector2(-36, -22)
 
-[node name="tree15" type="Sprite2D" parent="Props" unique_id=998017869]
-position = Vector2(2455, -131)
-texture = ExtResource("prop_tree")
-centered = false
-offset = Vector2(-52, -178)
-
 [node name="balloon_cart16" type="Sprite2D" parent="Props" unique_id=250013383]
 position = Vector2(2615, -127)
 texture = ExtResource("prop_balloon_cart")
@@ -186,12 +179,6 @@ position = Vector2(3095, -131)
 texture = ExtResource("prop_trash_can")
 centered = false
 offset = Vector2(-14, -38)
-
-[node name="tree19" type="Sprite2D" parent="Props" unique_id=1283364967]
-position = Vector2(3295, -131)
-texture = ExtResource("prop_tree")
-centered = false
-offset = Vector2(-52, -178)
 
 [node name="fruit_cart20" type="Sprite2D" parent="Props" unique_id=1011648019]
 position = Vector2(3595, -125)
